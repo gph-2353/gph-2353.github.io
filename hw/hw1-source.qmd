@@ -1,0 +1,92 @@
+---
+title: "Homework 1"
+subtitle: "Regression I, Fall 2026. Assigned Sep 15, due Tuesday Sep 29, 11:59 PM on Gradescope"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="hw1-source.qmd" download="hw1.qmd">**Download this assignment as a .qmd
+file**</a> to use as your starting template.
+
+**Instructions.** Complete this assignment in Quarto or R Markdown and submit
+a rendered PDF to Gradescope. Show your code. Interpretation questions are
+graded on precision (adjusted for what, units, association vs causation,
+population), exactly as practiced in Labs 2 and 3. End with your AI-use
+statement (see Section 4).
+
+**Data.** The Baystate Medical Center birth weight study (Springfield, MA,
+1986), 189 births:
+
+```{r}
+library(tidyverse)
+data(birthwt, package = "MASS")
+births <- birthwt |>
+  mutate(smoke = factor(smoke, labels = c("Non-smoker", "Smoker")))
+```
+
+Variables used below: `bwt` = birth weight (grams), `lwt` = mother's
+pre-pregnancy weight (pounds), `age` = mother's age (years), `smoke` =
+smoking during pregnancy.
+
+# Section 1: Do (6 points)
+
+**1.1** Describe the outcome `bwt`: a histogram plus a short numerical summary.
+Two sentences on center, spread, and shape, with units. (2 pts)
+
+**1.2** Fit the simple linear regression of `bwt` on `lwt`. Report the fitted
+equation and add the fitted line to a scatterplot (use your coefficients with
+`geom_abline`, not `geom_smooth`). (2 pts)
+
+**1.3** Using arithmetic on your coefficients, give the model's expected birth
+weight for mothers weighing 120 and 200 pounds. State which prediction you
+trust more, and why, referring to the data. (2 pts)
+
+# Section 2: Interpret (8 points; interpretation precision counts double)
+
+**2.1** Interpret the slope from 1.2 in one strong-form sentence. (2 pts)
+
+**2.2** The R-squared of this model is about 0.03. A journalist concludes the
+model is "useless." Give a two-sentence rebuttal that concedes what the model
+cannot do and states what the slope estimate still offers. (2 pts)
+
+**2.3** Fit `bwt ~ smoke`, then `bwt ~ smoke + lwt`. Report the smoking
+coefficient from both. Does adjusting for mother's weight change the smoking
+association much here? Using the group means of `lwt` by smoking status,
+explain in one sentence why the adjustment behaves the way it does. (2 pts)
+
+**2.4** Write the strong-form interpretation of the smoking coefficient in the
+adjusted model, then a second sentence stating clearly one reason this is not
+an estimate of the causal effect of smoking cessation. (2 pts)
+
+# Section 3: Critique the AI (6 points)
+
+A student pasted this dataset description into an AI assistant and asked for
+an analysis. The assistant replied:
+
+> "I fit a regression of birth weight on mother's age and found a slope of
+> 12.4 grams per year. Since the intercept is 2656 grams, a newborn whose
+> mother is age zero would weigh 2656 grams. The p-value for age was 0.19,
+> which proves that mother's age has no effect on birth weight. Because
+> heavier mothers tend to be older, I also recommend removing `lwt` from any
+> model that includes `age`, since two correlated predictors cannot be used
+> together in linear regression. Overall, since this regression is based on a
+> proper hospital sample, the slope of 12.4 tells us how much a mother's
+> baby will gain if she delays pregnancy by one year."
+
+**3.1** This paragraph contains at least four distinct statistical errors.
+Identify each one you find (quote the offending phrase), and explain in one or
+two sentences why it is wrong. Finding four earns full credit; a fifth earns a
+bonus point. (4 pts + 1 bonus)
+
+**3.2** Verify one of the AI's numerical claims by fitting `bwt ~ age`
+yourself. Report whether the slope and intercept match, and write the correct
+one-sentence conclusion about the age association that the data actually
+support. (2 pts)
+
+# Section 4: AI-use statement (required, ungraded)
+
+One or two sentences: which AI tools you used on this assignment and for what,
+or "No AI tools used." Note that Section 3 asks you to critique provided AI
+output; using an AI to critique the AI is permitted, but the errors you report
+are yours to defend.

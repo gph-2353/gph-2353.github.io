@@ -1,0 +1,129 @@
+---
+title: "Lab 2: Your First Regression"
+subtitle: "Week 2, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-02.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render and submit to Gradescope by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `nhanes_adults` exactly as in Lab 1).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(NHANES)
+theme_set(theme_minimal(base_size = 14))
+
+nhanes_adults <- NHANES |>
+  filter(SurveyYr == "2011_12", Age >= 20) |>
+  distinct(ID, .keep_all = TRUE) |>
+  select(
+    id = ID, age = Age, gender = Gender, race = Race1,
+    education = Education, income_mid = HHIncomeMid, poverty = Poverty,
+    height = Height, weight = Weight, bmi = BMI,
+    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,
+    tot_chol = TotChol, sleep_hrs = SleepHrsNight,
+    phys_active = PhysActive, smoker = Smoke100n,
+    alcohol_days = AlcoholYear, diabetes = Diabetes,
+    health_gen = HealthGen
+  )
+
+bp <- nhanes_adults |> drop_na(bp_sys, age)
+```
+
+# Part A: Blood pressure and age (11:40-12:10)
+
+## A1. Fit the model
+
+```{r}
+#| eval: false
+fit <- lm(___ ~ ___, data = bp)
+summary(fit)
+```
+
+## A2. Interpret, precisely
+
+Fill in each blank with a number from your output, then complete the
+sentences. Units matter.
+
+- "Each additional year of age is associated with ____ mmHg ____ (higher/lower)
+  average systolic blood pressure among US adults aged 20+."
+- "The intercept of ____ mmHg is the model's average BP at age ____, which is
+  (meaningful / not meaningful) here because ____."
+
+## A3. Predict by hand
+
+Use `coef(fit)` and arithmetic (no `predict()` yet) to give the model's
+expected systolic BP for:
+
+```{r}
+#| eval: false
+b <- coef(fit)
+b[1] + b[2] * 40   # 40-year-old
+b[1] + b[2] * ___  # 70-year-old
+b[1] + b[2] * ___  # 10-year-old
+```
+
+**One of these three predictions should not be trusted at all. Which, and
+why?** ...
+
+## A4. Draw your line
+
+Add the fitted line to the scatterplot using your coefficients (not
+`geom_smooth`).
+
+```{r}
+#| eval: false
+ggplot(bp, aes(age, bp_sys)) +
+  geom_point(alpha = 0.2) +
+  geom_abline(intercept = ___, slope = ___, color = "blue", linewidth = 1)
+```
+
+## A5. Residual detective
+
+```{r}
+#| eval: false
+bp_aug <- bp |> mutate(resid = resid(fit))
+bp_aug |> slice_max(resid, n = 3) |> select(age, bp_sys, resid)
+bp_aug |> slice_min(resid, n = 3) |> select(age, bp_sys, resid)
+```
+
+**In words: who does the model miss most badly, and in which direction?** ...
+
+# Part B: Your outcome (12:50-13:25, in pairs)
+
+Your pair's assigned outcome: ____ (`tot_chol`, `sleep_hrs`, `bmi`, or
+`pulse`).
+
+## B1. Choose and justify a predictor
+
+**Predictor:** ____. **Why do you expect a relationship (one sentence)?** ...
+
+## B2. Fit and plot
+
+```{r}
+# your code: fit the SLR, scatterplot with fitted line
+```
+
+## B3. Report like a professional
+
+Three sentences: the slope with units and direction, the R-squared as a
+plain-language fraction of variation, and one caution (confounder or data
+limitation).
+
+**Your answer:** ...
+
+## B4. Post to the board
+
+Add your outcome, predictor, and R-squared to the shared class board before
+1:25.
+
+## B5. Exit ticket
+
+Muddiest point from today: ...
