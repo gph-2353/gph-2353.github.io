@@ -1,0 +1,1403 @@
+[
+  {
+    "objectID": "weeks/week-14.html",
+    "href": "weeks/week-14.html",
+    "title": "Week 14: Project Presentations II & The Future of Modeling",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Dec 6, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 14: Project Presentations II & The Future of Modeling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-14.html#before-class",
+    "href": "weeks/week-14.html#before-class",
+    "title": "Week 14: Project Presentations II & The Future of Modeling",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Peer Rubrics",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 14: Project Presentations II & The Future of Modeling"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html",
+    "href": "weeks/week-12.html",
+    "title": "Week 12: In-Class Final Exam & Project Clinic",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Nov 22, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: In-Class Final Exam & Project Clinic"
+    ]
+  },
+  {
+    "objectID": "weeks/week-12.html#before-class",
+    "href": "weeks/week-12.html#before-class",
+    "title": "Week 12: In-Class Final Exam & Project Clinic",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Comprehensive Review",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 12: In-Class Final Exam & Project Clinic"
+    ]
+  },
+  {
+    "objectID": "weeks/week-10.html",
+    "href": "weeks/week-10.html",
+    "title": "Week 10: Model Selection & Project Workshop",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Nov 8, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 10: Model Selection & Project Workshop"
+    ]
+  },
+  {
+    "objectID": "weeks/week-10.html#before-class",
+    "href": "weeks/week-10.html#before-class",
+    "title": "Week 10: Model Selection & Project Workshop",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway Ch 10",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 10: Model Selection & Project Workshop"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html",
+    "href": "weeks/week-08.html",
+    "title": "Week 8: Transformations & Collinearity Problems",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Oct 25, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 8: Transformations & Collinearity Problems"
+    ]
+  },
+  {
+    "objectID": "weeks/week-08.html#before-class",
+    "href": "weeks/week-08.html#before-class",
+    "title": "Week 8: Transformations & Collinearity Problems",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway Ch 6, 7.1",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 8: Transformations & Collinearity Problems"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html",
+    "href": "weeks/week-06.html",
+    "title": "Week 6: Diagnostics I: Residuals & Constant Variance",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Oct 11, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Diagnostics I: Residuals & Constant Variance"
+    ]
+  },
+  {
+    "objectID": "weeks/week-06.html#before-class",
+    "href": "weeks/week-06.html#before-class",
+    "title": "Week 6: Diagnostics I: Residuals & Constant Variance",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway 5.1–5.3",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 6: Diagnostics I: Residuals & Constant Variance"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "Week 4: Statistical Inference, t & F Tests, ANOVA",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Sep 27, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 4: Statistical Inference, t & F Tests, ANOVA"
+    ]
+  },
+  {
+    "objectID": "weeks/week-04.html#before-class",
+    "href": "weeks/week-04.html#before-class",
+    "title": "Week 4: Statistical Inference, t & F Tests, ANOVA",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway 3.3–3.7",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 4: Statistical Inference, t & F Tests, ANOVA"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#this-weeks-question",
+    "href": "weeks/week-03/slides-a.html#this-weeks-question",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "This week’s question",
+    "text": "This week’s question\nIs smoking associated with higher blood pressure?\nThe naive answer:\n\ncoef(lm(bp_sys ~ smoker, data = d))\n\n (Intercept) smokerSmoker \n  120.185751     3.935734 \n\n\n\nSmokers average about 3.9 mmHg higher systolic BP\nShould a smoking cessation program advertise this as its expected BP benefit?"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#wait-who-are-the-smokers",
+    "href": "weeks/week-03/slides-a.html#wait-who-are-the-smokers",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "Wait: who are the smokers?",
+    "text": "Wait: who are the smokers?\n\nd |&gt; group_by(smoker) |&gt;\n  summarize(n = n(), mean_age = mean(age), mean_bp = mean(bp_sys))\n\n# A tibble: 2 × 4\n  smoker         n mean_age mean_bp\n  &lt;fct&gt;      &lt;int&gt;    &lt;dbl&gt;   &lt;dbl&gt;\n1 Non-Smoker  1179     45.2    120.\n2 Smoker       889     50.3    124.\n\n\n\nSmokers (defined here as 100+ lifetime cigarettes) are 7 years older on average\nAnd we know age is strongly associated with BP…\nThe smoking comparison is confounded by age"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#the-multiple-regression-model",
+    "href": "weeks/week-03/slides-a.html#the-multiple-regression-model",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "The multiple regression model",
+    "text": "The multiple regression model\ny_i = \\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\cdots + \\beta_p x_{ip} + \\varepsilon_i\n\nSame least squares idea: choose all the \\hat\\beta_j at once to minimize \\sum e_i^2\nGeometrically: fitting a plane (or hyperplane) instead of a line\nR syntax just adds terms: lm(bp_sys ~ smoker + age)"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#adjusting-for-age",
+    "href": "weeks/week-03/slides-a.html#adjusting-for-age",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "Adjusting for age",
+    "text": "Adjusting for age\n\ncoef(lm(bp_sys ~ smoker, data = d))\n\n (Intercept) smokerSmoker \n  120.185751     3.935734 \n\ncoef(lm(bp_sys ~ smoker + age, data = d))\n\n (Intercept) smokerSmoker          age \n 100.2188301    1.6833807    0.4413965 \n\n\n\nUnadjusted: +3.9 mmHg for smokers\nAge-adjusted: +1.7 mmHg: more than half of the gap was age, not smoke\nThis one move (and knowing when to trust it) is most of applied regression in public health"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#how-to-read-an-adjusted-coefficient",
+    "href": "weeks/week-03/slides-a.html#how-to-read-an-adjusted-coefficient",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "How to read an adjusted coefficient",
+    "text": "How to read an adjusted coefficient\nFor bp_sys ~ smoker + age, the smoker coefficient means:\n\nComparing two adults of the same age, the smoker averages 1.7 mmHg higher systolic BP.\n\n\n“Holding age fixed” or “adjusting for age” or “comparing like with like on age”\nIt does not say what happens if a person quits smoking (still observational!)\nIt does not adjust for anything you did not put in the model (diet, income, …)"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#think-pair-share-3-min",
+    "href": "weeks/week-03/slides-a.html#think-pair-share-3-min",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "Think-pair-share (3 min)",
+    "text": "Think-pair-share (3 min)\nIn our data, bp_sys ~ smoker + age gives a smoker coefficient of +1.7.\n\nSomeone claims: “so quitting would lower a smoker’s BP by 1.7 mmHg.” Name two distinct reasons this claim overreaches.\nWhat variable would you add next, and what do you predict happens to the smoking coefficient?"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#continuous-predictors-adjust-the-same-way",
+    "href": "weeks/week-03/slides-a.html#continuous-predictors-adjust-the-same-way",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "Continuous predictors adjust the same way",
+    "text": "Continuous predictors adjust the same way\n\ncoef(lm(bp_sys ~ age + bmi, data = d))\n\n(Intercept)         age         bmi \n 93.0870579   0.4436233   0.2693857 \n\n\n\nAge slope barely moves (0.45 to 0.44): age and BMI are nearly unrelated in adults, so they explain different parts of BP\nBMI: comparing same-age adults, each extra BMI unit is associated with +0.27 mmHg\nWhen predictors are correlated, coefficients shift on adjustment; when they are not, they barely move. Watching what moves is diagnostic gold"
+  },
+  {
+    "objectID": "weeks/week-03/slides-a.html#lab-part-a",
+    "href": "weeks/week-03/slides-a.html#lab-part-a",
+    "title": "Week 3A: More Than One Predictor",
+    "section": "Lab part A",
+    "text": "Lab part A\nReproduce the smoking story yourself, then extend it:\n\nFit the unadjusted and age-adjusted smoking models\nThen adjust additionally for bmi and for phys_active\nTrack the smoking coefficient across all four models in a small table\nWrite one sentence on what happens and why"
+  },
+  {
+    "objectID": "weeks/week-03.html",
+    "href": "weeks/week-03.html",
+    "title": "Week 3: Multiple Regression & Confounding Adjustment",
+    "section": "",
+    "text": "Read: Faraway, Linear Models with R, Section 2.9 and preview 3.1–3.2.\nPrepare for Warm-up Quiz 1 (Weeks 1–2 concepts; ten multiple-choice questions, 20 minutes; closed devices, no AI; 2% of the course grade). Practice with the Sample Quiz 1.\nContinue working on Homework 1 (due Tuesday Sep 29).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Multiple Regression & Confounding Adjustment"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#before-class",
+    "href": "weeks/week-03.html#before-class",
+    "title": "Week 3: Multiple Regression & Confounding Adjustment",
+    "section": "",
+    "text": "Read: Faraway, Linear Models with R, Section 2.9 and preview 3.1–3.2.\nPrepare for Warm-up Quiz 1 (Weeks 1–2 concepts; ten multiple-choice questions, 20 minutes; closed devices, no AI; 2% of the course grade). Practice with the Sample Quiz 1.\nContinue working on Homework 1 (due Tuesday Sep 29).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Multiple Regression & Confounding Adjustment"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#topics",
+    "href": "weeks/week-03.html#topics",
+    "title": "Week 3: Multiple Regression & Confounding Adjustment",
+    "section": "Topics",
+    "text": "Topics\n\nFrom simple to multiple linear regression: Y = X\\beta + \\varepsilon\nInterpreting coefficients: “holding other predictors fixed” and its clinical limits\nSeeing confounding resolved: watching the smoking coefficient flip in NHANES\nCorrelated predictors and the geometry of least squares\nAdjusted R^2 (\\bar{R}^2) and what multiple regression cannot fix\nIn-Class Warm-up Quiz 1 (1:00 PM, closed devices)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Multiple Regression & Confounding Adjustment"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#materials",
+    "href": "weeks/week-03.html#materials",
+    "title": "Week 3: Multiple Regression & Confounding Adjustment",
+    "section": "Materials",
+    "text": "Materials\n\n📊 Lecture Slides:\n\nPart A: Multiple Predictors & Adjustment (HTML)\nPart B: The Geometry of MLR (HTML)\n\n✅ Quiz Practice:\n\nSample Quiz 1 with answer key (HTML) · PDF\n\n📝 In-Class Lab:\n\nView Lab 3 Worksheet (HTML)\nDownload Starter Code (.qmd)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Multiple Regression & Confounding Adjustment"
+    ]
+  },
+  {
+    "objectID": "weeks/week-03.html#due",
+    "href": "weeks/week-03.html#due",
+    "title": "Week 3: Multiple Regression & Confounding Adjustment",
+    "section": "Due",
+    "text": "Due\n\nWarm-up Quiz 1: Completed in class, 1:00–1:20 PM.\nLab 3: Submit to Gradescope by 11:59 PM tonight.\nUpcoming: Homework 1 due Tuesday Sep 29 at 11:59 PM.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 3: Multiple Regression & Confounding Adjustment"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#this-weeks-question",
+    "href": "weeks/week-02/slides-a.html#this-weeks-question",
+    "title": "Week 2A: Least Squares",
+    "section": "This week’s question",
+    "text": "This week’s question\nHow much does systolic blood pressure differ with age among US adults?\n\n\nCode\nggplot(bp, aes(age, bp_sys)) +\n  geom_point(alpha = 0.2) +\n  labs(x = \"Age (years)\", y = \"Systolic BP (mmHg)\")\n\n\n\nA cloud, not a line. Our job: summarize its trend with a line chosen by a defensible rule."
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#the-simple-linear-regression-model",
+    "href": "weeks/week-02/slides-a.html#the-simple-linear-regression-model",
+    "title": "Week 2A: Least Squares",
+    "section": "The simple linear regression model",
+    "text": "The simple linear regression model\ny_i = \\beta_0 + \\beta_1 x_i + \\varepsilon_i\n\ny_i: systolic BP of person i; x_i: their age\n\\beta_0, \\beta_1: unknown parameters describing the population\n\\varepsilon_i: error term, everything else that moves BP (genes, diet, measurement error)\n\n\nWe never see \\beta_0, \\beta_1. We compute estimates \\hat\\beta_0,\n\\hat\\beta_1 from data, and the hat matters."
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#which-line-is-best",
+    "href": "weeks/week-02/slides-a.html#which-line-is-best",
+    "title": "Week 2A: Least Squares",
+    "section": "Which line is “best”?",
+    "text": "Which line is “best”?\nFor any candidate line, person i has a residual: vertical miss between data and line,\ne_i = y_i - (\\hat\\beta_0 + \\hat\\beta_1 x_i).\n\nWhy not minimize \\sum e_i? Positive and negative misses cancel; a terrible line can have sum zero\nWhy not \\sum |e_i|? Legitimate (and used!), but no calculus-friendly closed form\nLeast squares: minimize \\sum e_i^2: penalizes big misses heavily, and the solution is exact and unique"
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#the-least-squares-solution",
+    "href": "weeks/week-02/slides-a.html#the-least-squares-solution",
+    "title": "Week 2A: Least Squares",
+    "section": "The least squares solution",
+    "text": "The least squares solution\nMinimizing \\sum_i (y_i - \\beta_0 - \\beta_1 x_i)^2 over (\\beta_0, \\beta_1) gives:\n\\hat\\beta_1 = \\frac{\\sum_i (x_i - \\bar x)(y_i - \\bar y)}{\\sum_i (x_i - \\bar x)^2} = r \\cdot \\frac{s_y}{s_x}, \\qquad \\hat\\beta_0 = \\bar y - \\hat\\beta_1 \\bar x\n\nSlope: correlation rescaled by the ratio of standard deviations\nIntercept: forces the line through (\\bar x, \\bar y)\n\n\nCheck by hand vs lm():\n\nc(slope_by_hand = with(bp, cor(age, bp_sys) * sd(bp_sys) / sd(age)),\n  slope_from_lm = unname(coef(lm(bp_sys ~ age, data = bp))[2]))\n\nslope_by_hand slope_from_lm \n    0.4509181     0.4509181"
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#fitting-and-reading-the-model",
+    "href": "weeks/week-02/slides-a.html#fitting-and-reading-the-model",
+    "title": "Week 2A: Least Squares",
+    "section": "Fitting and reading the model",
+    "text": "Fitting and reading the model\n\nfit &lt;- lm(bp_sys ~ age, data = bp)\nsummary(fit)\n\n\nCall:\nlm(formula = bp_sys ~ age, data = bp)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-52.307  -9.918  -1.172   8.591  97.966 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 100.48837    0.99568  100.92   &lt;2e-16 ***\nage           0.45092    0.01964   22.96   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.82 on 2086 degrees of freedom\nMultiple R-squared:  0.2018,    Adjusted R-squared:  0.2014 \nF-statistic: 527.3 on 1 and 2086 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#interpreting-the-coefficients-the-graded-skill",
+    "href": "weeks/week-02/slides-a.html#interpreting-the-coefficients-the-graded-skill",
+    "title": "Week 2A: Least Squares",
+    "section": "Interpreting the coefficients (the graded skill)",
+    "text": "Interpreting the coefficients (the graded skill)\n\ncoef(fit)\n\n(Intercept)         age \n100.4883689   0.4509181 \n\n\n\nSlope: each additional year of age is associated with 0.45 mmHg higher average systolic BP among US adults\nIntercept: the model’s average BP at age zero: 100.5 mmHg. Meaningless here (no newborns in the data); it is a mathematical anchor, not a claim\n\n\n\n\n\n\n\n\n\nWords that keep you honest\n\n\n“is associated with,” “on average,” “among US adults 20+.” Not “aging raises BP by”: that is a causal claim this design cannot make."
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#think-pair-share-2-min",
+    "href": "weeks/week-02/slides-a.html#think-pair-share-2-min",
+    "title": "Week 2A: Least Squares",
+    "section": "Think-pair-share (2 min)",
+    "text": "Think-pair-share (2 min)\nYour colleague fits the same model with age in decades instead of years.\n\nWhat happens to the slope?\nWhat happens to the intercept?\nDoes the fitted line itself change?\n\n\n\ncoef(lm(bp_sys ~ I(age / 10), data = bp))\n\n(Intercept)   I(age/10) \n 100.488369    4.509181 \n\n\nSame line, rescaled description. Units are part of the interpretation."
+  },
+  {
+    "objectID": "weeks/week-02/slides-a.html#lab-part-a",
+    "href": "weeks/week-02/slides-a.html#lab-part-a",
+    "title": "Week 2A: Least Squares",
+    "section": "Lab part A",
+    "text": "Lab part A\nOpen Week 2 Lab, Part A: fit bp_sys ~ age yourself, interpret every number in summary(), and use the line to predict: for a 40-year-old, a 70-year-old, and a 10-year-old (and decide which of those predictions you should refuse to make)."
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "Week 2: Simple Linear Regression & Least Squares",
+    "section": "",
+    "text": "Read: Faraway, Linear Models with R, Sections 2.1–2.6.\nReview Week 1 concepts and EDA techniques.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Simple Linear Regression & Least Squares"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#before-class",
+    "href": "weeks/week-02.html#before-class",
+    "title": "Week 2: Simple Linear Regression & Least Squares",
+    "section": "",
+    "text": "Read: Faraway, Linear Models with R, Sections 2.1–2.6.\nReview Week 1 concepts and EDA techniques.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Simple Linear Regression & Least Squares"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#topics",
+    "href": "weeks/week-02.html#topics",
+    "title": "Week 2: Simple Linear Regression & Least Squares",
+    "section": "Topics",
+    "text": "Topics\n\nThe simple linear regression model: Y = \\beta_0 + \\beta_1 X + \\varepsilon\nLeast squares estimation from first principles: minimizing \\sum e_i^2\nSlope and intercept interpretations with strict units and strong-form precision\nFitted values (\\hat{Y}), residuals (e), and residual standard deviation (s_e)\nDecomposing total variation (SS_{Tot} = SS_{Reg} + SS_{Res}) and R^2 meaning & pitfalls",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Simple Linear Regression & Least Squares"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#materials",
+    "href": "weeks/week-02.html#materials",
+    "title": "Week 2: Simple Linear Regression & Least Squares",
+    "section": "Materials",
+    "text": "Materials\n\n📊 Lecture Slides:\n\nPart A: Least Squares & lm() (HTML)\nPart B: R-Squared & Variation (HTML)\n\n📝 In-Class Lab:\n\nView Lab 2 Worksheet (HTML)\nDownload Starter Code (.qmd)\n\n💻 Homework 1 (Assigned):\n\nView HW 1 Assignment\nDownload HW 1 Template (.qmd) (Due Tue Sep 29 at 11:59 PM)",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Simple Linear Regression & Least Squares"
+    ]
+  },
+  {
+    "objectID": "weeks/week-02.html#due",
+    "href": "weeks/week-02.html#due",
+    "title": "Week 2: Simple Linear Regression & Least Squares",
+    "section": "Due",
+    "text": "Due\n\nLab 2: Submit to Gradescope by 11:59 PM tonight.\nNext week: Warm-up Quiz 1 at 1:00 PM on Tue Sep 22, covering Weeks 1-2. Practice with the Sample Quiz 1.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 2: Simple Linear Regression & Least Squares"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#welcome",
+    "href": "weeks/week-01/slides-a.html#welcome",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Welcome",
+    "text": "Welcome\n\nRegression I: Linear Regression with Modeling\nTuesdays 11:00-1:40, 708 Broadway Room 801\nInstructor: Yang Feng\nEverything lives on the course website; Brightspace for announcements and grades"
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#how-this-course-works",
+    "href": "weeks/week-01/slides-a.html#how-this-course-works",
+    "title": "Week 1A: What Regression Is For",
+    "section": "How this course works",
+    "text": "How this course works\nEvery week has the same rhythm:\n\nWarm-up quiz (10 min): low stakes, checks last week stuck\nMini-lecture, then you analyze data, twice per class\nLabs are done in class on your own laptop and count for credit by completion\nHomework rewards interpretation, not just running code\nOne project, four milestones, real public health data of your choice\n\n\n\n\n\n\n\n\n\nThe deal\n\n\nI keep the lecturing short. You bring a laptop and actually do regression every single week. By December you will have analyzed data a dozen times, not watched me do it a dozen times."
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#ai-in-this-course",
+    "href": "weeks/week-01/slides-a.html#ai-in-this-course",
+    "title": "Week 1A: What Regression Is For",
+    "section": "AI in this course",
+    "text": "AI in this course\n\nYou may use AI tools for homework and the project: learning, debugging, drafting\nYou disclose what you used and for what (one sentence is fine)\nYou own every word and number you submit: expect to explain any of it\nQuizzes and the final exam are in class and AI-free: that is where you prove the understanding is yours\n\n\nDetails in the AI ground rules handout."
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#what-is-a-regression-question",
+    "href": "weeks/week-01/slides-a.html#what-is-a-regression-question",
+    "title": "Week 1A: What Regression Is For",
+    "section": "What is a regression question?",
+    "text": "What is a regression question?\nAll of these are regression questions:\n\nHow much does systolic blood pressure rise per decade of age, and does the rate differ between smokers and non-smokers?\nWhich county characteristics best predict premature death rates, and how well?\nAfter adjusting for age and income, is sleep duration associated with BMI?\n\n\nCommon structure: a continuous outcome y, one or more predictors x, and a question about the relationship."
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#three-jobs-a-regression-model-can-do",
+    "href": "weeks/week-01/slides-a.html#three-jobs-a-regression-model-can-do",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Three jobs a regression model can do",
+    "text": "Three jobs a regression model can do\n\nDescription: summarize how y varies with x in these data\nPrediction: given a new x, what y should we expect, and how sure are we?\nExplanation: what happens to y if x changes? (causal, the hardest)\n\n\n\n\n\n\n\n\nWarning\n\n\nSame lm() output, three very different claims. Most regression disasters come from doing job 1 and announcing job 3."
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#where-it-all-started-galtons-heights",
+    "href": "weeks/week-01/slides-a.html#where-it-all-started-galtons-heights",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Where it all started: Galton’s heights",
+    "text": "Where it all started: Galton’s heights\nFrancis Galton (1886) collected heights of parents and their adult children.\n\n\nCode\ndata(\"GaltonFamilies\")\nggplot(GaltonFamilies, aes(midparentHeight, childHeight)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  geom_abline(slope = 1, intercept = 0, linetype = 2, color = \"red\") +\n  labs(x = \"Mid-parent height (in)\", y = \"Adult child height (in)\",\n       title = \"Galton's families: the original regression\")"
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#regression-to-the-mean",
+    "href": "weeks/week-01/slides-a.html#regression-to-the-mean",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Regression to the mean",
+    "text": "Regression to the mean\n\nThe fitted line (blue) is flatter than the identity line (red, slope 1)\nTall parents have tall children, but less tall than themselves on average; short parents likewise\nGalton called it “regression towards mediocrity”; the name stuck to the whole method\n\n\nThink-pair-share (2 min): A clinic measures blood pressure twice. Patients flagged as hypertensive at visit 1 tend to look better at visit 2 even with no treatment. Why? What would this do to a naive before-after study of a new drug?"
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#regression-to-the-mean-is-everywhere",
+    "href": "weeks/week-01/slides-a.html#regression-to-the-mean-is-everywhere",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Regression to the mean is everywhere",
+    "text": "Regression to the mean is everywhere\n\nThe “sophomore slump” and magazine-cover jinx\nSpeed cameras placed at intersections after crash spikes “work”\nExtreme baseline patients improve in single-arm trials\n\n\nThis is why we need control groups and why understanding regression deeply matters for public health practice, not just for fitting lines."
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#our-recurring-dataset-nhanes",
+    "href": "weeks/week-01/slides-a.html#our-recurring-dataset-nhanes",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Our recurring dataset: NHANES",
+    "text": "Our recurring dataset: NHANES\nNational Health and Nutrition Examination Survey: interviews + physical exams, the workhorse of US public health surveillance.\n\nglimpse(nhanes_adults)\n\nRows: 2,173\nColumns: 20\n$ id           &lt;int&gt; 62172, 62174, 62176, 62178, 62180, 62199, 62205, 62206, 6…\n$ age          &lt;int&gt; 43, 80, 34, 80, 35, 57, 28, 35, 38, 62, 31, 32, 54, 50, 3…\n$ gender       &lt;fct&gt; female, male, female, male, male, male, male, female, mal…\n$ race         &lt;fct&gt; Black, White, White, White, White, White, White, White, H…\n$ education    &lt;fct&gt; High School, College Grad, College Grad, High School, Col…\n$ income_mid   &lt;int&gt; 22500, 70000, 100000, 2500, 22500, 100000, 100000, 87500,…\n$ poverty      &lt;dbl&gt; 2.02, 4.30, 5.00, 0.05, 0.87, 5.00, 5.00, 2.74, 1.53, 1.1…\n$ height       &lt;dbl&gt; 172.0, 168.1, 171.6, 173.5, 178.7, 186.0, 171.4, 167.4, 1…\n$ weight       &lt;dbl&gt; 98.6, 95.8, 68.7, 85.9, 89.0, 96.9, 84.8, 81.5, 63.2, 53.…\n$ bmi          &lt;dbl&gt; 33.3, 33.9, 23.3, 28.5, 27.9, 28.0, 28.9, 29.1, 22.2, 26.…\n$ bp_sys       &lt;int&gt; 103, 97, 107, 121, 107, 110, 122, 106, 105, 108, 120, 104…\n$ bp_dia       &lt;int&gt; 72, 39, 69, 72, 66, 65, 87, 50, 59, 57, 71, 73, 69, 74, 8…\n$ pulse        &lt;int&gt; 80, 56, 92, 68, 66, 84, 70, 58, 52, 72, 62, 78, 80, 88, 7…\n$ tot_chol     &lt;dbl&gt; 4.37, 5.25, 4.42, 5.20, 3.70, 4.42, 5.46, 5.02, 5.25, 4.5…\n$ sleep_hrs    &lt;int&gt; 8, 9, 7, 6, 7, 8, 6, 7, 5, 6, 6, 7, 8, 7, 6, 4, 5, 8, 6, …\n$ phys_active  &lt;fct&gt; No, No, Yes, No, No, Yes, Yes, No, Yes, No, Yes, No, No, …\n$ smoker       &lt;fct&gt; Smoker, Non-Smoker, Non-Smoker, Non-Smoker, Non-Smoker, S…\n$ alcohol_days &lt;int&gt; 104, 0, 104, NA, 2, 260, 52, NA, 2, 0, 36, 52, 104, 36, 1…\n$ diabetes     &lt;fct&gt; No, No, No, No, No, No, No, No, No, No, No, No, No, Yes, …\n$ health_gen   &lt;fct&gt; Good, Fair, Vgood, Fair, Good, Vgood, Good, NA, Good, Fai…"
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#nhanes-caveats-say-them-once-remember-all-semester",
+    "href": "weeks/week-01/slides-a.html#nhanes-caveats-say-them-once-remember-all-semester",
+    "title": "Week 1A: What Regression Is For",
+    "section": "NHANES caveats (say them once, remember all semester)",
+    "text": "NHANES caveats (say them once, remember all semester)\n\nOur version is a teaching extract: resampled, survey weights ignored\nCross-sectional: one time point per person\nSelf-reported variables (sleep, alcohol) measured with error\n\n\nFine for learning regression; for a real paper you would use the raw NHANES files with survey methods."
+  },
+  {
+    "objectID": "weeks/week-01/slides-a.html#up-next",
+    "href": "weeks/week-01/slides-a.html#up-next",
+    "title": "Week 1A: What Regression Is For",
+    "section": "Up next",
+    "text": "Up next\nLab part A: your turn.\n\nDownload Lab 1 from the course website and open it in RStudio\nRun the setup chunk, then work through Part A\nGoal: get comfortable exploring nhanes_adults and spotting data problems\nSetup trouble? Raise a hand now; we fix it on the spot\nRaise a hand early and often; that is what lab time is for"
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "Week 1: Regression Questions in Public Health & Exploring Data",
+    "section": "",
+    "text": "Read: Faraway, Linear Models with R, Chapter 1.\nComplete the Computing Setup Guide to install R, RStudio Desktop, and course packages.\nReview the course Syllabus and AI Policy.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Regression Questions in Public Health & Exploring Data"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html#before-class",
+    "href": "weeks/week-01.html#before-class",
+    "title": "Week 1: Regression Questions in Public Health & Exploring Data",
+    "section": "",
+    "text": "Read: Faraway, Linear Models with R, Chapter 1.\nComplete the Computing Setup Guide to install R, RStudio Desktop, and course packages.\nReview the course Syllabus and AI Policy.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Regression Questions in Public Health & Exploring Data"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html#topics",
+    "href": "weeks/week-01.html#topics",
+    "title": "Week 1: Regression Questions in Public Health & Exploring Data",
+    "section": "Topics",
+    "text": "Topics\n\nWelcome and course workflow: the active-learning modeling studio\nWhat makes a regression question? (Real-world public health examples)\nGalton’s heights and regression to the mean\nExploratory Data Analysis (EDA) on continuous outcomes with nhanes_adults\nAssociation vs. causation and introduction to confounding",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Regression Questions in Public Health & Exploring Data"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html#materials",
+    "href": "weeks/week-01.html#materials",
+    "title": "Week 1: Regression Questions in Public Health & Exploring Data",
+    "section": "Materials",
+    "text": "Materials\n\n📊 Lecture Slides:\n\nPart A: What Regression Is For (HTML)\nPart B: Correlation vs. Causation (HTML)\n\n📝 In-Class Lab:\n\nView Lab 1 Worksheet (HTML)\nDownload Starter Code (.qmd)\n\n📄 Handouts:\n\nComputing Setup Guide\nAI Ground Rules",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Regression Questions in Public Health & Exploring Data"
+    ]
+  },
+  {
+    "objectID": "weeks/week-01.html#due",
+    "href": "weeks/week-01.html#due",
+    "title": "Week 1: Regression Questions in Public Health & Exploring Data",
+    "section": "Due",
+    "text": "Due\n\nLab 1: Render and submit to Gradescope by 11:59 PM tonight (graded on completion).",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 1: Regression Questions in Public Health & Exploring Data"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "All class sessions meet Tuesdays 11:00 AM–1:40 PM in 708 Broadway, Room 801. Readings should be completed before class. Homework assignments are due Tuesdays at 11:59 PM on Gradescope; each week’s in-class lab is submitted the night of class.\n\n\n\n\n\n\n\n\n\nDate\nTopic\nReadings\nAssignments Due (11:59 PM)\n\n\n\n\nSep 8\nWeek 1: Regression Questions in Public Health & Exploring Data\nFaraway Ch 1\nLab 1\n\n\nSep 15\nWeek 2: Simple Linear Regression & Least Squares\nFaraway 2.1–2.6\nLab 2 · HW 1 Assigned\n\n\nSep 22\nWeek 3: Multiple Regression & Confounding Adjustment\nFaraway 2.9, 3.1–3.2\nLab 3 · Quiz 1\n\n\nSep 29\nWeek 4: Statistical Inference, t & F Tests, ANOVA\nFaraway 3.3–3.7\nHW 1 (Tue Sep 29) · Lab 4 · HW 2 Assigned\n\n\nOct 6\nWeek 5: Prediction, Intervals & Extrapolation\nFaraway Ch 4\nProject Proposal · Lab 5 · Quiz 2\n\n\nOct 13\nWeek 6: Diagnostics I: Residuals & Constant Variance\nFaraway 5.1–5.3\nHW 2 (Tue Oct 13) · Lab 6 · HW 3 Assigned\n\n\nOct 20\nWeek 7: Diagnostics II: Normality, Leverage & Influence\nFaraway 5.4–5.6\nLab 7 · Quiz 3\n\n\nOct 27\nWeek 8: Transformations & Collinearity Problems\nFaraway Ch 6, 7.1\nHW 3 (Tue Oct 27) · Lab 8 · HW 4 Assigned\n\n\nNov 3\nWeek 9: Categorical Predictors & Interaction Models\nFaraway Ch 8\nProject EDA Memo · Lab 9 · Quiz 4\n\n\nNov 10\nWeek 10: Model Selection & Project Workshop\nFaraway Ch 10\nHW 4 (Tue Nov 10) · Lab 10 · HW 5 Assigned\n\n\nNov 17\nWeek 11: Integrative Case Study & Exam Review\nReview Materials\nLab 11 · Quiz 5 · Practice Exam · HW 6 Assigned\n\n\nNov 24\nWeek 12: In-Class Final Exam & Project Clinic\nComprehensive\nHW 5 (Tue Nov 24) · Final Exam (11:00 AM)\n\n\nDec 1\nWeek 13: Project Presentations I\nPeer Rubrics\nHW 6 (Tue Dec 1) · Presentations Day 1\n\n\nDec 8\nWeek 14: Project Presentations II & Wrap-up\nPeer Rubrics\nPresentations Day 2\n\n\nDec 15\nFinal Project Report Due\n—\nFinal Report + Code + AI Appendix"
+  },
+  {
+    "objectID": "project/index.html",
+    "href": "project/index.html",
+    "title": "Course Project",
+    "section": "",
+    "text": "In groups of up to two, you will carry out a complete regression analysis of a public health dataset of your choice: pose a question, explore the data, build and check models, and communicate what you found. The project is worth 30% of the course grade, spread over four milestones so that feedback arrives while it can still help.\nAI tools may be used throughout under the course policy (use it, disclose it, own it); the report and presentation each include an AI-use statement."
+  },
+  {
+    "objectID": "project/index.html#milestone-1-proposal-1-page",
+    "href": "project/index.html#milestone-1-proposal-1-page",
+    "title": "Course Project",
+    "section": "Milestone 1: Proposal (1 page)",
+    "text": "Milestone 1: Proposal (1 page)\nState your research question, name your dataset (with a link and evidence you can actually load it), identify the continuous outcome and 4+ candidate predictors, and note anything worrying (missing data, small n, odd units).\nRubric (3 pts): feasible dataset in hand, 1; clear continuous-outcome question answerable with linear regression, 1; sensible candidate predictors with units described, 1.\nThe main purpose is to catch infeasible plans early. You may change course afterward; talk to me first."
+  },
+  {
+    "objectID": "project/index.html#milestone-2-eda-memo-2-3-pages",
+    "href": "project/index.html#milestone-2-eda-memo-2-3-pages",
+    "title": "Course Project",
+    "section": "Milestone 2: EDA memo (2-3 pages)",
+    "text": "Milestone 2: EDA memo (2-3 pages)\nUnivariate summaries of outcome and key predictors, at least three informative plots, a missing-data accounting, and a short “what we expect models to show and what might go wrong” paragraph.\nRubric (5 pts): outcome described with appropriate plots/statistics, 1; predictor-outcome relationships explored graphically, 2; missing data and data-quality issues identified honestly, 1; analysis plan updated in light of EDA, 1."
+  },
+  {
+    "objectID": "project/index.html#milestone-3-presentation-10-min-3-min-questions",
+    "href": "project/index.html#milestone-3-presentation-10-min-3-min-questions",
+    "title": "Course Project",
+    "section": "Milestone 3: Presentation (10 min + 3 min questions)",
+    "text": "Milestone 3: Presentation (10 min + 3 min questions)\nBoth partners speak. Cover: question, data, one EDA highlight, your final model with interpretation, one diagnostic you checked, and one limitation stated plainly. Slides in any tool; submit the file the night before.\nRubric (7 pts): clarity of question and motivation, 1; correctness of statistical content, 2; interpretation precision (the strong-form sentence discipline), 2; diagnostics honestly presented, 1; delivery and timekeeping, 1. Peer feedback forms inform, but do not determine, the delivery point."
+  },
+  {
+    "objectID": "project/index.html#milestone-4-final-report-max-8-pages-appendix",
+    "href": "project/index.html#milestone-4-final-report-max-8-pages-appendix",
+    "title": "Course Project",
+    "section": "Milestone 4: Final report (max 8 pages + appendix)",
+    "text": "Milestone 4: Final report (max 8 pages + appendix)\nSingle-spaced, 12 pt, sections: Introduction, Methods, Results, Discussion. Unlimited appendix for code and extra output; the 8 pages must stand alone.\nRubric (15 pts):\n\nIntroduction (2): question, motivation, data source described\nMethods (3): models stated precisely, choices justified (transformations, included variables), inference approach described\nResults (6): estimation with interpretation (2), inference (1), diagnostics with consequences addressed (2), model comparison/selection (1)\nDiscussion (2): findings in context, limitations including confounding\nWriting quality and reproducibility (2): report reads cleanly; code in appendix reruns from the raw data"
+  },
+  {
+    "objectID": "project/index.html#picking-a-dataset",
+    "href": "project/index.html#picking-a-dataset",
+    "title": "Course Project",
+    "section": "Picking a dataset",
+    "text": "Picking a dataset\nAny public dataset with a continuous outcome and enough observations (n of 200+ recommended) works. Good starting points:\n\nCounty Health Rankings: county-level health outcomes and factors (countyhealthrankings.org)\nNHANES (raw waves, different variables than class): CDC NHANES\nBRFSS: state/individual behavioral risk factors (CDC BRFSS)\nCDC PLACES: census-tract health estimates (CDC PLACES)\nGapminder / WHO Global Health Observatory: country-level indicators (who.int/data/gho)\nEPA Air Quality System: pollution measurements (epa.gov/outdoor-air-quality-data)\nNYC Open Data: restaurant inspections, health surveys, vital statistics (opendata.cityofnewyork.us)\nIPUMS Health Surveys: harmonized NHIS/MEPS microdata (healthsurveys.ipums.org)\nGlobal Burden of Disease: country-year disease burden (ghdx.healthdata.org)\nTidy Tuesday archives: many curated health-adjacent sets (github.com/rfordatascience/tidytuesday)\n\nAvoid: time series as your only structure (we do not cover it), binary outcomes (that is Regression II: logistic), and datasets so clean they teach you nothing. A little messiness is a feature; document what you did about it."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Regression I: Linear Regression with Modeling",
+    "section": "",
+    "text": "Tuesdays 11:00 AM–1:40 PM · 708 Broadway, Room 801 · Sep 8 – Dec 8, 2026"
+  },
+  {
+    "objectID": "index.html#how-the-course-works",
+    "href": "index.html#how-the-course-works",
+    "title": "Regression I: Linear Regression with Modeling",
+    "section": "How the course works",
+    "text": "How the course works\n\nHands-on Modeling Studio. Every Tuesday session alternates mini-lectures with guided and open-ended lab exercises, so you actively build and critique models in every class.\nInterpretation & AI Critique. Computing models is easy; understanding them is where true expertise lies. Homework assignments emphasize strong-form verbal interpretations and feature dedicated sections where you critique and correct flawed AI-generated statistical reasoning.\nIndividual Fluency Certification. While AI tools are embraced on homework and projects, five short warm-up quizzes (every other week) and the in-class final exam certify your independent statistical hand-fluency without electronic devices.\nPublic Health Research Project. You will work in pairs to analyze a real-world public health dataset of your choice, culminating in a conference-style presentation, an AI-use appendix, and a reproducible Quarto report."
+  },
+  {
+    "objectID": "index.html#quick-links",
+    "href": "index.html#quick-links",
+    "title": "Regression I: Linear Regression with Modeling",
+    "section": "Quick links",
+    "text": "Quick links\n\n\n\nInstructor\nYang Feng (yf31@nyu.edu) · office hours Fridays 3:30 PM on Zoom\n\n\nCourse Assistant\nXinyue Chang (xc3315@nyu.edu) · office hours Tuesdays 3:00–4:00 PM on Zoom\n\n\nRequired Text\nFaraway, Linear Models with R, 2nd ed. (CRC Press)\n\n\nRecommended Texts\nR Programming: Zero to Pro · R for Data Science (2e)\n\n\nSchedule\nWeek-by-week schedule and materials\n\n\nSyllabus\nFull course policies & grading\n\n\nAbsences\nExcused Absence Request form (60 min before class)\n\n\nAI Policy\nThe Three Zones framework\n\n\nCourse Project\nProject guidelines and milestones"
+  },
+  {
+    "objectID": "index.html#getting-started-before-week-1",
+    "href": "index.html#getting-started-before-week-1",
+    "title": "Regression I: Linear Regression with Modeling",
+    "section": "Getting started (before Week 1)",
+    "text": "Getting started (before Week 1)\n\nInstall R (version 4.2 or newer) and RStudio Desktop (both free).\nOpen RStudio and run in the console:\ninstall.packages(c(\"tidyverse\", \"NHANES\", \"usdata\", \"faraway\", \"HistData\", \"car\", \"rmarkdown\"))\nFollow the Computing Setup Guide to verify your installation.\nDownload the lab from the Week 1 page, open it in RStudio, and confirm it renders before class."
+  },
+  {
+    "objectID": "handouts/quiz-01-sample.html",
+    "href": "handouts/quiz-01-sample.html",
+    "title": "Sample Warm-Up Quiz 1",
+    "section": "",
+    "text": "This is a practice quiz. It is not the quiz you will sit, and none of these questions appear on it. It matches the real quiz in every other way: ten multiple-choice questions, one point each, twenty minutes, and the same topics in the same proportions. If you can do this comfortably without help, you are ready.\nWarm-Up Quiz 1 is on Tuesday, September 22 at 1:00 PM, during the last part of class. It is closed book, closed notes, and closed AI, with no laptops, phones, or watches. It is on paper, so there is nothing to install and nothing to submit.\nPractice it the way you will sit it. Put the slides away, close your browser, and do not run any R. Four of the ten questions come from Week 1 and six from Week 2, in no particular order. The answer key at the bottom names the topic each question was testing, so do all ten before you look.\n\n\n\nA city health department fits a regression of hospital admissions on daily temperature, and uses it to anticipate how many beds will be needed during next week’s heat wave. Which job is the model doing?\nA. Description\nB. Prediction\nC. Explanation\nD. None: regression cannot be used for planning\n\n\n\nA magazine notes that athletes who appear on its cover usually perform worse the following season, and calls it a jinx. What is the statistical explanation?\nA. The added attention genuinely harms performance\nB. Athletes on covers are older than average\nC. Performance measures become less accurate over time\nD. Cover athletes are selected for an exceptional season, which is partly chance, so the next season is typically closer to their true average\n\n\n\nWhich of the following best defines a confounder in a study of x and y?\nA. A variable measured with error\nB. An observation far from the fitted line\nC. A third variable that influences both x and y\nD. The part of y the model fails to capture\n\n\n\nA regression of BMI on sleep hours adjusts for age, income, and physical activity. The adjusted association remains. Which level of the honest hierarchy have you reached?\nA. Association only\nB. Adjusted association, which supports causation only if the right confounders were measured\nC. Causation, since confounders were adjusted for\nD. Causation, since the sample is nationally representative\n\n\n\nWhy do we not choose the line that minimizes \\sum_i e_i, the plain sum of the residuals?\nA. It has no closed-form solution\nB. It would give too much weight to large misses\nC. It is undefined when n is large\nD. Positive and negative residuals cancel, so a very poor line can achieve a sum of zero\n\n\n\nIn a sample, the correlation between sleep hours and BMI is r = -0.30, with s_x = 1.5 hours and s_y = 6.0 kg/m^2. Using \\hat\\beta_1 = r \\cdot s_y / s_x, the slope is closest to:\nA. -0.075 kg/m^2 per hour\nB. -0.45 kg/m^2 per hour\nC. -1.20 kg/m^2 per hour\nD. -1.80 kg/m^2 per hour\n\n\n\nA model of BMI on sleep hours gives a slope of -0.32. Which sentence interprets it correctly?\nA. Adults who sleep one hour more have, on average, 0.32 kg/m^2 lower BMI\nB. Sleeping one more hour reduces BMI by 0.32 kg/m^2\nC. Sleep explains 32% of the variation in BMI\nD. BMI falls by 32% for each additional hour of sleep\n\n\n\nAdults in a sample report between 0 and 12 hours of vigorous exercise per week. A regression of BMI on weekly exercise hours gives an intercept of 28.4 kg/m^2. What does the intercept mean here?\nA. The average BMI among adults reporting no vigorous exercise\nB. Nothing: the intercept is never interpretable\nC. The number of hours at which BMI reaches zero\nD. The amount BMI falls for each additional hour of exercise\n\n\n\nA model of BMI on sleep hours reports R^2 = 0.02. Which conclusion is most defensible?\nA. Sleep accounts for about 2% of the variation in BMI, which is unremarkable for an individual-level health outcome\nB. The model is broken and should not be reported\nC. The model’s predictions are 2% accurate\nD. 2% of people in the sample fall exactly on the line\n\n\n\nA lab discovers its monitor reads 5 mmHg too low, so 5 mmHg is added to every systolic BP reading y_i. The ages x_i are untouched and the model is refitted. Compared with the original fit, what happens to \\hat\\beta_0 and \\hat\\beta_1?\nA. Both increase by 5\nB. \\hat\\beta_1 is unchanged and \\hat\\beta_0 increases by 5\nC. \\hat\\beta_1 increases by 5 and \\hat\\beta_0 is unchanged\nD. Neither changes, because a constant shift cancels out"
+  },
+  {
+    "objectID": "handouts/quiz-01-sample.html#how-to-use-this",
+    "href": "handouts/quiz-01-sample.html#how-to-use-this",
+    "title": "Sample Warm-Up Quiz 1",
+    "section": "",
+    "text": "This is a practice quiz. It is not the quiz you will sit, and none of these questions appear on it. It matches the real quiz in every other way: ten multiple-choice questions, one point each, twenty minutes, and the same topics in the same proportions. If you can do this comfortably without help, you are ready.\nWarm-Up Quiz 1 is on Tuesday, September 22 at 1:00 PM, during the last part of class. It is closed book, closed notes, and closed AI, with no laptops, phones, or watches. It is on paper, so there is nothing to install and nothing to submit.\nPractice it the way you will sit it. Put the slides away, close your browser, and do not run any R. Four of the ten questions come from Week 1 and six from Week 2, in no particular order. The answer key at the bottom names the topic each question was testing, so do all ten before you look.\n\n\n\nA city health department fits a regression of hospital admissions on daily temperature, and uses it to anticipate how many beds will be needed during next week’s heat wave. Which job is the model doing?\nA. Description\nB. Prediction\nC. Explanation\nD. None: regression cannot be used for planning\n\n\n\nA magazine notes that athletes who appear on its cover usually perform worse the following season, and calls it a jinx. What is the statistical explanation?\nA. The added attention genuinely harms performance\nB. Athletes on covers are older than average\nC. Performance measures become less accurate over time\nD. Cover athletes are selected for an exceptional season, which is partly chance, so the next season is typically closer to their true average\n\n\n\nWhich of the following best defines a confounder in a study of x and y?\nA. A variable measured with error\nB. An observation far from the fitted line\nC. A third variable that influences both x and y\nD. The part of y the model fails to capture\n\n\n\nA regression of BMI on sleep hours adjusts for age, income, and physical activity. The adjusted association remains. Which level of the honest hierarchy have you reached?\nA. Association only\nB. Adjusted association, which supports causation only if the right confounders were measured\nC. Causation, since confounders were adjusted for\nD. Causation, since the sample is nationally representative\n\n\n\nWhy do we not choose the line that minimizes \\sum_i e_i, the plain sum of the residuals?\nA. It has no closed-form solution\nB. It would give too much weight to large misses\nC. It is undefined when n is large\nD. Positive and negative residuals cancel, so a very poor line can achieve a sum of zero\n\n\n\nIn a sample, the correlation between sleep hours and BMI is r = -0.30, with s_x = 1.5 hours and s_y = 6.0 kg/m^2. Using \\hat\\beta_1 = r \\cdot s_y / s_x, the slope is closest to:\nA. -0.075 kg/m^2 per hour\nB. -0.45 kg/m^2 per hour\nC. -1.20 kg/m^2 per hour\nD. -1.80 kg/m^2 per hour\n\n\n\nA model of BMI on sleep hours gives a slope of -0.32. Which sentence interprets it correctly?\nA. Adults who sleep one hour more have, on average, 0.32 kg/m^2 lower BMI\nB. Sleeping one more hour reduces BMI by 0.32 kg/m^2\nC. Sleep explains 32% of the variation in BMI\nD. BMI falls by 32% for each additional hour of sleep\n\n\n\nAdults in a sample report between 0 and 12 hours of vigorous exercise per week. A regression of BMI on weekly exercise hours gives an intercept of 28.4 kg/m^2. What does the intercept mean here?\nA. The average BMI among adults reporting no vigorous exercise\nB. Nothing: the intercept is never interpretable\nC. The number of hours at which BMI reaches zero\nD. The amount BMI falls for each additional hour of exercise\n\n\n\nA model of BMI on sleep hours reports R^2 = 0.02. Which conclusion is most defensible?\nA. Sleep accounts for about 2% of the variation in BMI, which is unremarkable for an individual-level health outcome\nB. The model is broken and should not be reported\nC. The model’s predictions are 2% accurate\nD. 2% of people in the sample fall exactly on the line\n\n\n\nA lab discovers its monitor reads 5 mmHg too low, so 5 mmHg is added to every systolic BP reading y_i. The ages x_i are untouched and the model is refitted. Compared with the original fit, what happens to \\hat\\beta_0 and \\hat\\beta_1?\nA. Both increase by 5\nB. \\hat\\beta_1 is unchanged and \\hat\\beta_0 increases by 5\nC. \\hat\\beta_1 increases by 5 and \\hat\\beta_0 is unchanged\nD. Neither changes, because a constant shift cancels out"
+  },
+  {
+    "objectID": "handouts/quiz-01-sample.html#answer-key",
+    "href": "handouts/quiz-01-sample.html#answer-key",
+    "title": "Sample Warm-Up Quiz 1",
+    "section": "Answer key",
+    "text": "Answer key\nDo all ten first.\nQ1. B. (three jobs a model can do) The model is being used to anticipate a future value from a new x, which is prediction. Description would be summarizing the relationship in past data; explanation would be claiming that changing the temperature changes admissions.\nQ2. D. (regression to the mean) Selection on an extreme outcome guarantees that luck contributed to it, so the next measurement drifts back toward the athlete’s true average. This is the same mechanism as the clinic that re-measures its highest-BP patients, and it is why single-arm before-after studies are so misleading.\nQ3. C. (confounding) A confounder drives both variables. B describes an outlier and D describes the error term or residual: correct vocabulary, wrong object.\nQ4. B. (association and causation) Adjustment moves you from level 1 to level 2 of the hierarchy, and no further. The honest sentence names the variables you adjusted for and admits that unmeasured confounding remains possible. C is the most common overreach in write-ups.\nQ5. D. (the least squares criterion) A line that misses badly in both directions can still have residuals summing to zero. In fact every least squares line with an intercept has \\sum e_i = 0, so this criterion cannot distinguish good lines from bad ones. B describes an argument against squaring, not against summing.\nQ6. C. (computing the slope) -0.30 \\times 6.0 / 1.5 = -1.20. D is r \\cdot s_y / s_x with the standard deviations swapped in your head, and B is r \\cdot s_y without dividing. Keep the units attached and the arithmetic checks itself: kg/m^2 divided by hours gives kg/m^2 per hour.\nQ7. A. (interpreting the slope) Number, units, direction, “on average”, and a comparison between people. B is causal, which this design cannot support. D confuses a slope in the original units with a percentage change.\nQ8. A. (the intercept) The intercept is always the model’s average y when x = 0. What makes it interpretable here is that x = 0 is a real, observed group: adults who do no vigorous exercise. Contrast this with a model of BP on age, where x = 0 means newborns and lies far outside the data, so the intercept is only a mathematical anchor. C describes where the line crosses the x-axis, which is a different quantity, and D is the slope.\nQ9. A. (r-squared) Small R^2 values are normal for individual-level health outcomes, where most variation comes from biology and behavior you did not measure. A small R^2 does not make an association unimportant, and it does not make the model wrong.\nQ10. B. (changing the measurements) Shifting every y by a constant slides the whole cloud of points up without tilting it. Formally, \\hat\\beta_1 depends on y only through y_i - \\bar y, and adding 5 to every y_i also adds 5 to \\bar y, so the deviations and the slope are untouched. The intercept then moves with the mean: \\hat\\beta_0 = \\bar y - \\hat\\beta_1 \\bar x gains exactly 5. D is tempting if you remember that “constants cancel” in the slope, but the intercept is precisely where the constant does not cancel."
+  },
+  {
+    "objectID": "handouts/quiz-01-sample.html#one-more-thing-worth-knowing",
+    "href": "handouts/quiz-01-sample.html#one-more-thing-worth-knowing",
+    "title": "Sample Warm-Up Quiz 1",
+    "section": "One more thing worth knowing",
+    "text": "One more thing worth knowing\nThis did not fit as a question, but it is the mistake that costs the most marks on the interpretation questions, so it is worth thirty seconds now.\nCompare these two sentences about a slope of -0.32 for sleep hours:\n\nAdults who sleep one hour more have, on average, 0.32 kg/m^2 lower BMI.\n\n\nSleeping one more hour lowers BMI by 0.32 kg/m^2.\n\nThe first compares different people at one moment, which is what cross-sectional data contains. The second describes what happens inside one person over time, which the data never observed. The numbers are identical and the claims are not.\nWhen you write an interpretation, check that it contains four things: the number, the units, the direction, and a phrase such as “on average” or “is associated with”. If the sentence would still make sense as an instruction to a patient, it is probably too strong."
+  },
+  {
+    "objectID": "handouts/quiz-01-sample.html#systematic-changes-to-x-or-y",
+    "href": "handouts/quiz-01-sample.html#systematic-changes-to-x-or-y",
+    "title": "Sample Warm-Up Quiz 1",
+    "section": "Systematic changes to x or y",
+    "text": "Systematic changes to x or y\nQuestion 10 is one case of a pattern worth knowing in general. Everything below follows from the two formulas you already have,\n\\hat\\beta_1 = \\frac{\\sum_i (x_i - \\bar x)(y_i - \\bar y)}{\\sum_i (x_i - \\bar x)^2},\n\\qquad \\hat\\beta_0 = \\bar y - \\hat\\beta_1 \\bar x.\n\n\n\n\n\n\n\n\nChange to the data\nNew slope\nNew intercept\n\n\n\n\nAdd a to every x_i\n\\hat\\beta_1\n\\hat\\beta_0 - a\\hat\\beta_1\n\n\nAdd b to every y_i\n\\hat\\beta_1\n\\hat\\beta_0 + b\n\n\nMultiply every x_i by c\n\\hat\\beta_1 / c\n\\hat\\beta_0\n\n\nMultiply every y_i by d\nd\\,\\hat\\beta_1\nd\\,\\hat\\beta_0\n\n\n\nTwo things to take from the table. Shifting either variable never changes the slope, because the slope is built from deviations around the mean and a shift moves the mean by the same amount. Rescaling changes the slope by exactly the factor needed to keep the fitted line in the same place: measuring age in decades rather than years divides x by 10, so the slope is multiplied by 10 and describes a decade instead of a year.\nIn every row the fitted line is the same line, drawn on relabelled axes, so the residuals are unchanged up to the same rescaling and R^2 does not move at all. Only the description changes, which is why units belong in every interpretation you write."
+  },
+  {
+    "objectID": "handouts/computing-setup.html",
+    "href": "handouts/computing-setup.html",
+    "title": "Computing Setup",
+    "section": "",
+    "text": "We do all in-class work in R on your own laptop, so the one requirement is arriving at Week 1 with a working setup. Follow these steps and you are done; nothing in this course costs money."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#step-1-install-r",
+    "href": "handouts/computing-setup.html#step-1-install-r",
+    "title": "Computing Setup",
+    "section": "Step 1: Install R",
+    "text": "Step 1: Install R\nDownload and install R from cloud.r-project.org (choose your operating system, accept all defaults). If you already have R, version 4.2 or newer is fine."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#step-2-install-rstudio-desktop",
+    "href": "handouts/computing-setup.html#step-2-install-rstudio-desktop",
+    "title": "Computing Setup",
+    "section": "Step 2: Install RStudio Desktop",
+    "text": "Step 2: Install RStudio Desktop\nDownload the free RStudio Desktop from posit.co/download/rstudio-desktop and install it. Open it once to confirm it launches.\nAlready comfortable with Positron? You may use it instead; the labs are plain Quarto files and work identically in both. Course instructions and screenshots assume RStudio."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#step-3-install-the-course-packages",
+    "href": "handouts/computing-setup.html#step-3-install-the-course-packages",
+    "title": "Computing Setup",
+    "section": "Step 3: Install the course packages",
+    "text": "Step 3: Install the course packages\nIn the RStudio Console (bottom-left pane), paste this line and press Enter:\ninstall.packages(c(\"tidyverse\", \"NHANES\", \"usdata\", \"faraway\", \"HistData\", \"car\", \"rmarkdown\"))\nThis takes a few minutes. Answer “no” if asked about compiling from source."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#step-4-verify-with-the-test-document",
+    "href": "handouts/computing-setup.html#step-4-verify-with-the-test-document",
+    "title": "Computing Setup",
+    "section": "Step 4: Verify with the test document",
+    "text": "Step 4: Verify with the test document\n\nOpen Lab 1 from the course website’s Schedule page and click the “Download this lab as a .qmd file” link at the top.\nOpen it in RStudio (File, Open File).\nRun the first chunk (the play button on the chunk labeled setup). You should see no errors.\nClick Render at the top of the editor. If a document appears, you are fully set up. Done."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#every-week-during-the-semester",
+    "href": "handouts/computing-setup.html#every-week-during-the-semester",
+    "title": "Computing Setup",
+    "section": "Every week during the semester",
+    "text": "Every week during the semester\nDownload that week’s lab.qmd from the course website before or at the start of class, edit it during the labs, click Render, and upload the output file to Gradescope by 11:59 PM."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#backup-option-posit-cloud-free-plan",
+    "href": "handouts/computing-setup.html#backup-option-posit-cloud-free-plan",
+    "title": "Computing Setup",
+    "section": "Backup option: Posit Cloud free plan",
+    "text": "Backup option: Posit Cloud free plan\nIf your laptop dies or an install fight breaks out mid-semester, you can run RStudio in the browser for free: create an account at posit.cloud (free plan, no card needed), start a New Project, upload the week’s lab.qmd (Files pane, Upload), and run the install.packages line from Step 3 once inside the project. The free plan includes 25 project hours per month, plenty for our labs. This is a fallback, not the main path; local RStudio is faster and works offline."
+  },
+  {
+    "objectID": "handouts/computing-setup.html#if-you-get-stuck",
+    "href": "handouts/computing-setup.html#if-you-get-stuck",
+    "title": "Computing Setup",
+    "section": "If you get stuck",
+    "text": "If you get stuck\nCome to class 10 minutes early in Week 1 or 2 and we will fix your setup together. Setup problems are normal and fixable; falling silently behind is the only real mistake."
+  },
+  {
+    "objectID": "ai-policy.html",
+    "href": "ai-policy.html",
+    "title": "AI Policy: The Three Zones",
+    "section": "",
+    "text": "This course treats AI assistants (ChatGPT, Claude, Gemini, GitHub Copilot, and similar) as standard tools of modern statistical practice. You will learn to use them effectively and critically, while developing the solid statistical foundation to evaluate and explain models without them."
+  },
+  {
+    "objectID": "ai-policy.html#why-this-policy",
+    "href": "ai-policy.html#why-this-policy",
+    "title": "AI Policy: The Three Zones",
+    "section": "Why this policy",
+    "text": "Why this policy\nIn professional biostatistics and public health data science, computing models is fast, but judgment, interpretation in context, and diagnostic scrutiny are what protect against false conclusions.\nAI tools are prone to subtle statistical errors: 1. Conflating statistical association with causal effects. 2. Fabricating interpretations of adjusted regression coefficients that ignore confounding structures. 3. Overlooking severe residual non-linearity or influential outliers. 4. Hallucinating package syntax, citations, or data definitions.\nBanning AI tools would fail to prepare you for modern practice; relying on them blindly would leave you unable to catch their errors. This course trains you to direct AI tools purposefully, verify their mathematical and contextual accuracy, and take full ownership of your statistical work."
+  },
+  {
+    "objectID": "ai-policy.html#requirements-ethics",
+    "href": "ai-policy.html#requirements-ethics",
+    "title": "AI Policy: The Three Zones",
+    "section": "Requirements & Ethics",
+    "text": "Requirements & Ethics\n\nFree-tier tools are sufficient: All coursework can be completed with free-tier AI assistants; no paid subscriptions are required or expected.\nOwnership: “The AI told me to” is never an acceptable defense for an erroneous model, an incorrect interpretation, or broken code.\nIntegrity: Submitting AI-generated analyses you cannot explain, using AI during quizzes or exams, or omitting required disclosures constitutes an academic integrity violation."
+  },
+  {
+    "objectID": "handouts/ai-ground-rules.html",
+    "href": "handouts/ai-ground-rules.html",
+    "title": "AI Ground Rules",
+    "section": "",
+    "text": "AI assistants are part of how statistics gets done now. Banning them would teach you nothing about using them well, and “using them well” is a skill your employers will expect. So here is the deal."
+  },
+  {
+    "objectID": "handouts/ai-ground-rules.html#the-three-rules",
+    "href": "handouts/ai-ground-rules.html#the-three-rules",
+    "title": "AI Ground Rules",
+    "section": "The three rules",
+    "text": "The three rules\n1. Use it. On homework and the project you may use AI tools (ChatGPT, Claude, Copilot, or similar) to learn concepts, debug code, explore approaches, and improve writing. Some homework problems will hand you AI output and require you to critique it.\n2. Disclose it. Every homework and project submission ends with a one- or two-sentence AI-use statement. Examples:\n\n“I used Claude to debug a ggplot error in Q2 and to suggest wording for my Q4 interpretation, which I revised.”\n\n\n“No AI tools used.”\n\nHonest disclosure is never penalized. Missing or false disclosure is an academic integrity violation.\n3. Own it. You are responsible for every word and number you submit. “The AI said so” does not excuse a wrong answer, an invented reference, or code you cannot explain. I may ask you to walk me through any part of your submission, and the biweekly quizzes and final exam (both in class, no AI) check that the understanding is actually yours."
+  },
+  {
+    "objectID": "handouts/ai-ground-rules.html#what-good-use-looks-like",
+    "href": "handouts/ai-ground-rules.html#what-good-use-looks-like",
+    "title": "AI Ground Rules",
+    "section": "What good use looks like",
+    "text": "What good use looks like\n\n“Explain why my residual plot fans out and what that violates” then reading the cited textbook section to confirm\nPasting an error message and asking for the bug, then understanding the fix before moving on\nDrafting an interpretation yourself, asking AI to critique it, keeping your own voice"
+  },
+  {
+    "objectID": "handouts/ai-ground-rules.html#what-weak-use-looks-like-allowed-but-it-will-cost-you",
+    "href": "handouts/ai-ground-rules.html#what-weak-use-looks-like-allowed-but-it-will-cost-you",
+    "title": "AI Ground Rules",
+    "section": "What weak use looks like (allowed, but it will cost you)",
+    "text": "What weak use looks like (allowed, but it will cost you)\n\nPasting the whole homework in and copying answers out. The interpretation questions are graded on precision and context; generic AI prose scores poorly, and quiz day always comes.\nSubmitting code you cannot explain. It shows immediately when I ask."
+  },
+  {
+    "objectID": "handouts/ai-ground-rules.html#why-the-quizzes-and-exam-are-ai-free",
+    "href": "handouts/ai-ground-rules.html#why-the-quizzes-and-exam-are-ai-free",
+    "title": "AI Ground Rules",
+    "section": "Why the quizzes and exam are AI-free",
+    "text": "Why the quizzes and exam are AI-free\nNot distrust; calibration. You need regular, honest evidence of what you can do unaided, and so do I. Think of AI-free checkpoints as the treadmill stress test and AI-assisted work as daily life with your fitness tracker on."
+  },
+  {
+    "objectID": "handouts/peer-feedback-form.html",
+    "href": "handouts/peer-feedback-form.html",
+    "title": "Peer Feedback Form: Project Presentations",
+    "section": "",
+    "text": "One form per presentation. Circle a rating for each row, then write the two comments; the comments are the part teams learn most from. Hand the form in before the next talk begins.\nPresenting team: ________________________________________\nYour name: ________________________________________"
+  },
+  {
+    "objectID": "handouts/peer-feedback-form.html#ratings-1-weak-3-solid-5-excellent",
+    "href": "handouts/peer-feedback-form.html#ratings-1-weak-3-solid-5-excellent",
+    "title": "Peer Feedback Form: Project Presentations",
+    "section": "Ratings (1 = weak, 3 = solid, 5 = excellent)",
+    "text": "Ratings (1 = weak, 3 = solid, 5 = excellent)\n\n\n\n\n\n\n\n\n\n\n\n\n1\n2\n3\n4\n5\n\n\n\n\nClarity of question. I could state their research question and why it matters after the first slide.\n1\n2\n3\n4\n5\n\n\nCorrectness of statistics. The model, numbers, and claims looked right and matched what the course teaches.\n1\n2\n3\n4\n5\n\n\nInterpretation precision. Coefficients were delivered strong-form: adjustment set, units, association wording, population.\n1\n2\n3\n4\n5\n\n\nDiagnostics honesty. They showed at least one diagnostic, said what it revealed, and owned anything imperfect.\n1\n2\n3\n4\n5\n\n\nDelivery. Clear, practiced, within time, both partners contributing.\n1\n2\n3\n4\n5"
+  },
+  {
+    "objectID": "handouts/peer-feedback-form.html#one-thing-they-did-well",
+    "href": "handouts/peer-feedback-form.html#one-thing-they-did-well",
+    "title": "Peer Feedback Form: Project Presentations",
+    "section": "One thing they did well",
+    "text": "One thing they did well"
+  },
+  {
+    "objectID": "handouts/peer-feedback-form.html#one-question-or-suggestion",
+    "href": "handouts/peer-feedback-form.html#one-question-or-suggestion",
+    "title": "Peer Feedback Form: Project Presentations",
+    "section": "One question or suggestion",
+    "text": "One question or suggestion\n\n\n\n\n\n\n\nFeedback is shared with the presenting team (without your name). It informs, but does not determine, the delivery point of the presentation grade."
+  },
+  {
+    "objectID": "hw/hw1.html",
+    "href": "hw/hw1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Download this assignment as a .qmd file to use as your starting template.\nInstructions. Complete this assignment in Quarto or R Markdown and submit a rendered PDF to Gradescope. Show your code. Interpretation questions are graded on precision (adjusted for what, units, association vs causation, population), exactly as practiced in Labs 2 and 3. End with your AI-use statement (see Section 4).\nData. The Baystate Medical Center birth weight study (Springfield, MA, 1986), 189 births:\n\nlibrary(tidyverse)\ndata(birthwt, package = \"MASS\")\nbirths &lt;- birthwt |&gt;\n  mutate(smoke = factor(smoke, labels = c(\"Non-smoker\", \"Smoker\")))\n\nVariables used below: bwt = birth weight (grams), lwt = mother’s pre-pregnancy weight (pounds), age = mother’s age (years), smoke = smoking during pregnancy.\n\nSection 1: Do (6 points)\n1.1 Describe the outcome bwt: a histogram plus a short numerical summary. Two sentences on center, spread, and shape, with units. (2 pts)\n1.2 Fit the simple linear regression of bwt on lwt. Report the fitted equation and add the fitted line to a scatterplot (use your coefficients with geom_abline, not geom_smooth). (2 pts)\n1.3 Using arithmetic on your coefficients, give the model’s expected birth weight for mothers weighing 120 and 200 pounds. State which prediction you trust more, and why, referring to the data. (2 pts)\n\n\nSection 2: Interpret (8 points; interpretation precision counts double)\n2.1 Interpret the slope from 1.2 in one strong-form sentence. (2 pts)\n2.2 The R-squared of this model is about 0.03. A journalist concludes the model is “useless.” Give a two-sentence rebuttal that concedes what the model cannot do and states what the slope estimate still offers. (2 pts)\n2.3 Fit bwt ~ smoke, then bwt ~ smoke + lwt. Report the smoking coefficient from both. Does adjusting for mother’s weight change the smoking association much here? Using the group means of lwt by smoking status, explain in one sentence why the adjustment behaves the way it does. (2 pts)\n2.4 Write the strong-form interpretation of the smoking coefficient in the adjusted model, then a second sentence stating clearly one reason this is not an estimate of the causal effect of smoking cessation. (2 pts)\n\n\nSection 3: Critique the AI (6 points)\nA student pasted this dataset description into an AI assistant and asked for an analysis. The assistant replied:\n\n“I fit a regression of birth weight on mother’s age and found a slope of 12.4 grams per year. Since the intercept is 2656 grams, a newborn whose mother is age zero would weigh 2656 grams. The p-value for age was 0.19, which proves that mother’s age has no effect on birth weight. Because heavier mothers tend to be older, I also recommend removing lwt from any model that includes age, since two correlated predictors cannot be used together in linear regression. Overall, since this regression is based on a proper hospital sample, the slope of 12.4 tells us how much a mother’s baby will gain if she delays pregnancy by one year.”\n\n3.1 This paragraph contains at least four distinct statistical errors. Identify each one you find (quote the offending phrase), and explain in one or two sentences why it is wrong. Finding four earns full credit; a fifth earns a bonus point. (4 pts + 1 bonus)\n3.2 Verify one of the AI’s numerical claims by fitting bwt ~ age yourself. Report whether the slope and intercept match, and write the correct one-sentence conclusion about the age association that the data actually support. (2 pts)\n\n\nSection 4: AI-use statement (required, ungraded)\nOne or two sentences: which AI tools you used on this assignment and for what, or “No AI tools used.” Note that Section 3 asks you to critique provided AI output; using an AI to critique the AI is permitted, but the errors you report are yours to defend."
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Course Project: Public Health Regression Study",
+    "section": "",
+    "text": "In groups of up to two, you will carry out an end-to-end regression analysis of a real-world public health dataset of your choice: pose an impactful health question, explore and clean the data, formulate and refine multiple regression models, run diagnostic checks, and communicate your findings in both an oral presentation and a written manuscript.\nThe project is worth 30% of the course grade, spread across four milestones so that feedback arrives while it can still shape your analysis.\nAI tools may be used throughout under the course AI policy (verify-then-use with explicit disclosure)."
+  },
+  {
+    "objectID": "project.html#milestone-1-proposal-1-page-3",
+    "href": "project.html#milestone-1-proposal-1-page-3",
+    "title": "Course Project: Public Health Regression Study",
+    "section": "Milestone 1: Proposal (1 page, 3%)",
+    "text": "Milestone 1: Proposal (1 page, 3%)\nState your research question, name your public health data source (with a direct link and proof of loadability), identify your continuous outcome and at least 4 candidate predictors (with units), and note any initial data challenges (missingness, sample size, skewness).\nRubric (3 pts): - Feasible dataset in hand (1 pt) - Clear continuous-outcome question suitable for linear regression (1 pt) - Sensible candidate predictors with units described (1 pt)"
+  },
+  {
+    "objectID": "project.html#milestone-2-eda-memo-23-pages-5",
+    "href": "project.html#milestone-2-eda-memo-23-pages-5",
+    "title": "Course Project: Public Health Regression Study",
+    "section": "Milestone 2: EDA Memo (2–3 pages, 5%)",
+    "text": "Milestone 2: EDA Memo (2–3 pages, 5%)\nProvide univariate distributions of outcome and key predictors, at least three informative bivariate plots (with smooths/faceting), an honest accounting of missing data, and a summary of expected modeling relationships and anticipated challenges (non-linearity, collinearity, outliers).\nRubric (5 pts): - Outcome described with plots and summary statistics (1 pt) - Predictor-outcome relationships explored graphically (2 pts) - Missing data and data quality issues addressed honestly (1 pt) - Modeling plan updated in light of exploratory findings (1 pt)"
+  },
+  {
+    "objectID": "project.html#milestone-3-presentation-10-min-3-min-qa-7",
+    "href": "project.html#milestone-3-presentation-10-min-3-min-qa-7",
+    "title": "Course Project: Public Health Regression Study",
+    "section": "Milestone 3: Presentation (10 min + 3 min Q&A, 7%)",
+    "text": "Milestone 3: Presentation (10 min + 3 min Q&A, 7%)\nBoth partners must speak. Your presentation should cover: 1. Research question and public health motivation (1 slide). 2. Data source and one key EDA finding. 3. Your primary fitted multiple regression model with strong-form coefficient interpretations. 4. One diagnostic test/plot you investigated and how you resolved or acknowledged it. 5. Key limitations and implications.\nRubric (7 pts): - Clarity of research question and public health context (1 pt) - Correctness of statistical models and estimates (2 pts) - Precision of coefficient interpretations in words (2 pts) - Diagnostic checks honestly presented (1 pt) - Delivery, teamwork, and timing (1 pt)"
+  },
+  {
+    "objectID": "project.html#milestone-4-final-report-max-8-pages-appendix-15",
+    "href": "project.html#milestone-4-final-report-max-8-pages-appendix-15",
+    "title": "Course Project: Public Health Regression Study",
+    "section": "Milestone 4: Final Report (Max 8 pages + Appendix, 15%)",
+    "text": "Milestone 4: Final Report (Max 8 pages + Appendix, 15%)\nWritten in Quarto and rendered to a clean PDF report formatted with standard sections: Introduction, Methods, Results, and Discussion. An unlimited appendix may contain raw code, full model outputs, and your AI-Use Appendix.\nRubric (15 pts): - Introduction (2 pts): Research question, public health background, data source. - Methods (3 pts): Model specifications, justification of variable selection and transformations, inference framework. - Results (6 pts): Point estimates with strong-form interpretations (2 pts), statistical inference & hypothesis tests (1 pt), thorough diagnostic checks (2 pts), model comparisons (1 pt). - Discussion (2 pts): Public health implications, limitations, confounding, and causal cautions. - Reproducibility & AI Appendix (2 pts): Fully reproducible Quarto workflow; transparent disclosure of AI assistance."
+  },
+  {
+    "objectID": "project.html#recommended-public-health-datasets",
+    "href": "project.html#recommended-public-health-datasets",
+    "title": "Course Project: Public Health Regression Study",
+    "section": "Recommended Public Health Datasets",
+    "text": "Recommended Public Health Datasets\nAny publicly available dataset with a continuous outcome and sufficient sample size (n \\ge 200) is eligible:\n\nCounty Health Rankings: County-level health outcomes, clinical care, and socioeconomic factors (countyhealthrankings.org)\nCDC NHANES: Continuous national survey on nutrition and metabolic health (wwwn.cdc.gov/nchs/nhanes)\nCDC BRFSS: Behavioral risk factors and chronic disease surveillance (cdc.gov/brfss)\nCDC PLACES: Census-tract and local health outcome estimates (cdc.gov/places)\nWHO Global Health Observatory: Cross-country health and life-expectancy metrics (who.int/data/gho)\nEPA Outdoor Air Quality Data: Environmental exposures and particulate matter (epa.gov/outdoor-air-quality-data)\nNYC Open Data: Citywide community health surveys, air quality, and vital statistics (opendata.cityofnewyork.us)\nIPUMS Health Surveys: Harmonized NHIS and MEPS microdata (healthsurveys.ipums.org)\nGlobal Burden of Disease (GBD): Disability-adjusted life years and disease burden (ghdx.healthdata.org)\nTidyTuesday Health Archives: Curated public health and epidemiological datasets (github.com/rfordatascience/tidytuesday)"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Everything in this course runs on free software on your own laptop:\n\nInstall R and RStudio Desktop (both free).\nIn the RStudio console, run install.packages(c(\"tidyverse\", \"NHANES\", \"usdata\", \"faraway\", \"HistData\", \"car\", \"rmarkdown\")).\nDownload the Week 1 lab from the Schedule page, open it in RStudio, and click Render to confirm everything works.\n\nFull walkthrough, including the free browser-based fallback if your laptop misbehaves: Computing setup guide."
+  },
+  {
+    "objectID": "resources.html#getting-set-up-before-week-1",
+    "href": "resources.html#getting-set-up-before-week-1",
+    "title": "Resources",
+    "section": "",
+    "text": "Everything in this course runs on free software on your own laptop:\n\nInstall R and RStudio Desktop (both free).\nIn the RStudio console, run install.packages(c(\"tidyverse\", \"NHANES\", \"usdata\", \"faraway\", \"HistData\", \"car\", \"rmarkdown\")).\nDownload the Week 1 lab from the Schedule page, open it in RStudio, and click Render to confirm everything works.\n\nFull walkthrough, including the free browser-based fallback if your laptop misbehaves: Computing setup guide."
+  },
+  {
+    "objectID": "resources.html#ai-ground-rules",
+    "href": "resources.html#ai-ground-rules",
+    "title": "Resources",
+    "section": "AI ground rules",
+    "text": "AI ground rules\nThe one-page version of the course AI policy, with examples of great and not-so-great uses: AI ground rules handout."
+  },
+  {
+    "objectID": "resources.html#exam-preparation",
+    "href": "resources.html#exam-preparation",
+    "title": "Resources",
+    "section": "Exam preparation",
+    "text": "Exam preparation\n\nThe practice exam appears on the Week 11 page when that week is released. It mirrors the final exam’s format, length, and blueprint; do it timed, 90 minutes, notes only, before the Week 11 review session."
+  },
+  {
+    "objectID": "resources.html#r-references",
+    "href": "resources.html#r-references",
+    "title": "Resources",
+    "section": "R references",
+    "text": "R references\n\nR Programming: Zero to Pro (Yang Feng): the recommended refresher if your R is rusty.\nR for Data Science, 2nd ed.: data wrangling and visualization with the tidyverse.\nFaraway, Linear Models with R, 2nd ed.: the required text; readings are listed on the schedule."
+  },
+  {
+    "objectID": "resources.html#getting-help",
+    "href": "resources.html#getting-help",
+    "title": "Resources",
+    "section": "Getting help",
+    "text": "Getting help\n\nIn class: raise a hand during any lab; that is what lab time is for.\nInstructor office hours (Yang Feng, yf31@nyu.edu): Fridays 3:30 PM on Zoom (link on Brightspace), or by appointment.\nCourse assistant office hours (Xinyue Chang, xc3315@nyu.edu): Tuesdays 3:00–4:00 PM on Zoom (link on Brightspace).\nBrightspace discussion board: post questions; answering classmates counts as participation in spirit (and good karma)."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "GPH-GU 2353/3353: Regression 1: Linear Regression and Modeling (Fall 2026)"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course Description",
+    "text": "Course Description\nRegression models are one of the most important statistical techniques used in public health. This course focuses on data analysis that uses linear regression models for continuous outcomes. The first part of this course introduces simple and multiple linear regressions, principles of ordinary least square regression models, model assumptions, and inferences about model parameters. The second part of the course focuses on important practical matters, such as prediction, diagnostics, and variable selection. These two parts together provide the foundations for more advanced statistical modeling. Examples are drawn from broad areas of public health research. All the analyses will be taught and performed using R statistical software."
+  },
+  {
+    "objectID": "syllabus.html#course-overview",
+    "href": "syllabus.html#course-overview",
+    "title": "Syllabus",
+    "section": "Course Overview",
+    "text": "Course Overview\nThis course emphasizes modern, reproducible, and active statistical practice in public health. Class sessions follow a hands-on studio rhythm: short conceptual mini-lectures alternate with guided data analyses and paired coding labs in RStudio using real-world health datasets (including NHANES, US county health metrics, and clinical trials). All computational work is done using R and Quarto. In addition, an integrated “AI Policy & Practice” component trains students to use modern AI assistants productively and defensively for exploratory coding while developing the rigorous statistical judgment required to verify, interpret, and critique quantitative outputs."
+  },
+  {
+    "objectID": "syllabus.html#course-format",
+    "href": "syllabus.html#course-format",
+    "title": "Syllabus",
+    "section": "Course Format",
+    "text": "Course Format\nThis course will be offered in person. In total, students will receive 2,250 minutes of live in-person instruction."
+  },
+  {
+    "objectID": "syllabus.html#course-learning-objectives-ceph-competencies",
+    "href": "syllabus.html#course-learning-objectives-ceph-competencies",
+    "title": "Syllabus",
+    "section": "Course Learning Objectives & CEPH Competencies",
+    "text": "Course Learning Objectives & CEPH Competencies\n\n\n\n\n\n\n\n\nLearning Objective\nCompetency\nCourse Component\n\n\n\n\n1. Characteristics of Continuous Outcomes & Predictors: Describe the characteristics of continuous outcomes, continuous and categorical predictors, and their inherent challenges to data analysis. Apply descriptive and inferential methodologies according to the type of study design for answering a particular research question.\n• Apply descriptive and inferential methodologies according to the type of study design for answering a particular research question. (BC-1)• Harness basic concepts of probability, random variation and commonly used statistical probability distributions. (BC-2)\nWeek 2 & HW 1Week 3 & HW 1Week 4 & HW 2Week 5 & HW 2Week 6 & HW 3\n\n\n2. Descriptive Summarization: Apply descriptive techniques commonly used to summarize public health data.\n• Apply descriptive and inferential methodologies according to the type of study design for answering a particular research question. (BC-1)• Distinguish among the different measurement scales and the implications for selection of statistical methods to be used based on these distinctions. (BC-3)• Apply the methods and analytic tools of social and behavioral science to design, implement, and analyze evaluation or research studies. (SC-4)\nWeek 1Week 3 & HW 1Week 4 & HW 2Week 5 & HW 2\n\n\n3. Inferential Methodologies: Apply inferential methodologies to specific research questions.\n• Apply descriptive and inferential methodologies according to the type of study design for answering a particular research question. (BC-1)• Distinguish among the different measurement scales and the implications for selection of statistical methods to be used based on these distinctions. (BC-3)• Identify data sources, manage large datasets, and conduct analyses using appropriate statistical software. (EC-3)\nIn-Class Final ExamWeek 6 & HW 3Week 7 & HW 3Week 8 & HW 4Week 9 & HW 4Week 10 & HW 5Week 11 & HW 6\n\n\n4. Model Evaluation & Diagnostics: Evaluate appropriateness of fitted models, and select proper methods to produce cleaner results.\n• Implement the appropriate analytic methods for calculating key measures of association. (BC-4)\nWeek 2 & HW 1Week 5 & HW 2Week 6 & HW 3Week 7 & HW 3\n\n\n5. Written Communication & Ethics: Present statistical data in a written format for professional audiences. Understand and apply ethical principles to data acquisition, management, storage, sharing, and analysis.\n• Understand and apply ethical principles to data acquisition, management, storage, sharing, and analysis. (BC-5)• Interpret results of statistical analyses found in public health research studies. (BC-6)• Utilize relevant statistical software for data analysis. (BC-7)• Disseminate research findings to diverse audiences. (SC-6)\nFinal ProjectWeek 1Week 5 & HW 2\n\n\n\nNote: BC = Biostatistics Concentration Competency · SC = Social and Behavioral Science Competency · EC = Epidemiology Competency."
+  },
+  {
+    "objectID": "syllabus.html#course-requirements-texts",
+    "href": "syllabus.html#course-requirements-texts",
+    "title": "Syllabus",
+    "section": "Course Requirements & Texts",
+    "text": "Course Requirements & Texts\n\nRequired Textbook\n\nJulian J. Faraway (2015). Linear Models with R, 2nd Edition. CRC Press.\n\n\n\nRecommended Textbooks & Online Resources\n\nDarlington, R. B., & Hayes, A. F. (2017). Regression Analysis and Linear Models: Concepts, Applications, and Implementation. Guilford Press.\nFeng, Y. (2025). R Programming: Zero to Pro. Free at https://r02pro.github.io/\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for Data Science, 2nd Edition. Free at https://r4ds.hadley.nz/"
+  },
+  {
+    "objectID": "syllabus.html#grading-components",
+    "href": "syllabus.html#grading-components",
+    "title": "Syllabus",
+    "section": "Grading Components",
+    "text": "Grading Components\n\n\n\n\n\n\n\n\nComponent\nWeight\nDescription\n\n\n\n\nHomework Assignments (6)\n30%\nBi-weekly problem sets emphasizing the “Do / Interpret / Critique” framework. Submitted on Gradescope by Tuesdays 11:59 PM.\n\n\nIn-Class Labs (11)\n10%\nHands-on paired data analysis in RStudio during class; graded on good-faith completion (due Tuesday 11:59 PM).\n\n\nIn-Class Warm-Up Quizzes (5)\n10%\nSix-item handwritten checks (2% each) at the start of class in Weeks 3, 5, 7, 9 and 11, each covering the two preceding weeks. Closed devices, no AI. Quizzes cannot be made up. If you miss a quiz with an excused absence (absence form submitted at least 60 minutes before class), the quiz component is pro-rated over the quizzes you took, for at most one quiz per semester; further excused misses require documentation uploaded with the form and instructor approval. An unexcused missed quiz scores zero.\n\n\nIn-Class Final Exam\n20%\n90-minute comprehensive in-person exam on Tuesday, November 24, 2026 (Week 12).\n\n\nFinal Project: Proposal\n3%\n1-page research question and dataset proposal (Due Week 5, Tue Oct 6).\n\n\nFinal Project: EDA Memo\n5%\n2–3 page exploratory data analysis memo (Due Week 9, Tue Nov 3).\n\n\nFinal Project: Oral Presentation\n7%\nIn-class 10-minute presentation + 3-minute Q&A in Weeks 13 & 14.\n\n\nFinal Project: Final Report & AI Appendix\n15%\nMaximum 8-page reproducible report + code and AI reflection appendix (Due Tue Dec 15, 11:59 PM).\n\n\nTotal\n100%\n\n\n\n\n\nGrading Scale (Graduate Courses)\n\nA: 94–100 · A-: 90–93\nB+: 87–89 · B: 83–86 · B-: 80–82\nC+: 77–79 · C: 73–76 · C-: 70–72\nF: Below 70"
+  },
+  {
+    "objectID": "syllabus.html#policies",
+    "href": "syllabus.html#policies",
+    "title": "Syllabus",
+    "section": "Policies",
+    "text": "Policies\n\nAttendance & Excused Absences\nAttendance is expected at every session because labs and quizzes happen in class. If you must miss a class, submit the Excused Absence Request form at least 60 minutes before the class start time; you will receive an automatic email with the outcome. Your first excused absence in a course needs no documentation; every further request must include documentation uploaded with the form. Requests inside the 60-minute window or after class are not excused unless it was a genuine emergency and documentation is uploaded with the form; the instructor reviews those case by case. An excused absence lets you submit that week’s lab by the usual deadline without attending; quiz handling is described under Grading Components.\n\n\nTechnology & Generative AI Policy (Three Zones)\n\nZone 1: Permitted with Disclosure & Critique (Homework & Final Project) — You are encouraged to use AI tools (ChatGPT, Claude, Copilot) for exploratory coding, debugging, and ideation. When used, you must document your prompt strategy in an AI Appendix and take 100% intellectual responsibility for verifying all calculations.\nZone 2: Strictly Prohibited (Warm-Up Quizzes & Final Exam) — No electronic devices, internet access, or AI assistants are permitted during quizzes and exams.\nZone 3: Human-First (In-Class Labs) — Work with your human lab partner first before consulting AI assistants.\n\nFor full details, see the dedicated AI Policy page.\n\n\nAcademic Integrity & Institutional Statements\nAll students are expected to follow the standards of excellence and integrity set forth by New York University and the NYU School of Global Public Health. For full institutional statements on Community Guidelines, Plagiarism, Disciplinary Sanctions, and Student Accessibility (Moses Center), please refer to the NYU GPH student handbook and the Moses Center for Student Accessibility, linked from Brightspace."
+  },
+  {
+    "objectID": "weeks/week-01/lab.html",
+    "href": "weeks/week-01/lab.html",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "",
+    "text": "Download this lab as a .qmd file and open it in RStudio; this web page is just a preview.\nWelcome to your first lab. Work through Part A on your own (ask for help freely); Part B is done in pairs. Render this document (the Render button) and submit the HTML or PDF to Gradescope by 11:59 PM tonight. Labs are graded on completion.\nRun this setup chunk first. It loads the packages and builds nhanes_adults, the dataset we use all semester (US adults 20+ from NHANES 2011-2012).\nlibrary(tidyverse)\nlibrary(NHANES)\ntheme_set(theme_minimal(base_size = 14))\n\nnhanes_adults &lt;- NHANES |&gt;\n  filter(SurveyYr == \"2011_12\", Age &gt;= 20) |&gt;\n  distinct(ID, .keep_all = TRUE) |&gt;\n  select(\n    id = ID, age = Age, gender = Gender, race = Race1,\n    education = Education, income_mid = HHIncomeMid, poverty = Poverty,\n    height = Height, weight = Weight, bmi = BMI,\n    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,\n    tot_chol = TotChol, sleep_hrs = SleepHrsNight,\n    phys_active = PhysActive, smoker = Smoke100n,\n    alcohol_days = AlcoholYear, diabetes = Diabetes,\n    health_gen = HealthGen\n  )"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#a1.-first-look",
+    "href": "weeks/week-01/lab.html#a1.-first-look",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "A1. First look",
+    "text": "A1. First look\nRun each line and read the output. What does one row represent?\n\ndim(nhanes_adults)\n\n[1] 2173   20\n\nglimpse(nhanes_adults)\n\nRows: 2,173\nColumns: 20\n$ id           &lt;int&gt; 62172, 62174, 62176, 62178, 62180, 62199, 62205, 62206, 6…\n$ age          &lt;int&gt; 43, 80, 34, 80, 35, 57, 28, 35, 38, 62, 31, 32, 54, 50, 3…\n$ gender       &lt;fct&gt; female, male, female, male, male, male, male, female, mal…\n$ race         &lt;fct&gt; Black, White, White, White, White, White, White, White, H…\n$ education    &lt;fct&gt; High School, College Grad, College Grad, High School, Col…\n$ income_mid   &lt;int&gt; 22500, 70000, 100000, 2500, 22500, 100000, 100000, 87500,…\n$ poverty      &lt;dbl&gt; 2.02, 4.30, 5.00, 0.05, 0.87, 5.00, 5.00, 2.74, 1.53, 1.1…\n$ height       &lt;dbl&gt; 172.0, 168.1, 171.6, 173.5, 178.7, 186.0, 171.4, 167.4, 1…\n$ weight       &lt;dbl&gt; 98.6, 95.8, 68.7, 85.9, 89.0, 96.9, 84.8, 81.5, 63.2, 53.…\n$ bmi          &lt;dbl&gt; 33.3, 33.9, 23.3, 28.5, 27.9, 28.0, 28.9, 29.1, 22.2, 26.…\n$ bp_sys       &lt;int&gt; 103, 97, 107, 121, 107, 110, 122, 106, 105, 108, 120, 104…\n$ bp_dia       &lt;int&gt; 72, 39, 69, 72, 66, 65, 87, 50, 59, 57, 71, 73, 69, 74, 8…\n$ pulse        &lt;int&gt; 80, 56, 92, 68, 66, 84, 70, 58, 52, 72, 62, 78, 80, 88, 7…\n$ tot_chol     &lt;dbl&gt; 4.37, 5.25, 4.42, 5.20, 3.70, 4.42, 5.46, 5.02, 5.25, 4.5…\n$ sleep_hrs    &lt;int&gt; 8, 9, 7, 6, 7, 8, 6, 7, 5, 6, 6, 7, 8, 7, 6, 4, 5, 8, 6, …\n$ phys_active  &lt;fct&gt; No, No, Yes, No, No, Yes, Yes, No, Yes, No, Yes, No, No, …\n$ smoker       &lt;fct&gt; Smoker, Non-Smoker, Non-Smoker, Non-Smoker, Non-Smoker, S…\n$ alcohol_days &lt;int&gt; 104, 0, 104, NA, 2, 260, 52, NA, 2, 0, 36, 52, 104, 36, 1…\n$ diabetes     &lt;fct&gt; No, No, No, No, No, No, No, No, No, No, No, No, No, Yes, …\n$ health_gen   &lt;fct&gt; Good, Fair, Vgood, Fair, Good, Vgood, Good, NA, Good, Fai…\n\n\nYour answer (1 sentence): …"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#a2.-summarize-the-outcome-we-will-use-all-semester",
+    "href": "weeks/week-01/lab.html#a2.-summarize-the-outcome-we-will-use-all-semester",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "A2. Summarize the outcome we will use all semester",
+    "text": "A2. Summarize the outcome we will use all semester\nFill in the blank to summarize systolic blood pressure (bp_sys).\n\nsummary(nhanes_adults$___)\n\nHow many missing values does it have? Why might blood pressure be missing in a health survey? …"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#a3.-pictures-beat-tables",
+    "href": "weeks/week-01/lab.html#a3.-pictures-beat-tables",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "A3. Pictures beat tables",
+    "text": "A3. Pictures beat tables\nMake a histogram of bp_sys. Then try changing bins to 10 and to 100.\n\nggplot(nhanes_adults, aes(x = ___)) +\n  geom_histogram(bins = 30)\n\nDescribe the shape (symmetric? skewed? outliers?): …"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#a4.-a-categorical-predictor",
+    "href": "weeks/week-01/lab.html#a4.-a-categorical-predictor",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "A4. A categorical predictor",
+    "text": "A4. A categorical predictor\nsmoker records whether the person has smoked 100+ cigarettes in their life.\n\nnhanes_adults |&gt;\n  count(___)\n\nggplot(nhanes_adults, aes(x = smoker, y = bp_sys)) +\n  geom_boxplot()\n\nWhich group has higher median blood pressure? Is that what you expected? …"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#a5.-hunting-for-data-problems",
+    "href": "weeks/week-01/lab.html#a5.-hunting-for-data-problems",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "A5. Hunting for data problems",
+    "text": "A5. Hunting for data problems\nReal data are messy. Investigate sleep_hrs:\n\nsummary(nhanes_adults$sleep_hrs)\nnhanes_adults |&gt;\n  count(sleep_hrs) |&gt;\n  arrange(desc(sleep_hrs))\n\nDo any values look implausible or suspiciously rounded? What would you do about them in a real analysis? …"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#b1.-the-plot",
+    "href": "weeks/week-01/lab.html#b1.-the-plot",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "B1. The plot",
+    "text": "B1. The plot\nOne polished scatterplot (or boxplot if your predictor is categorical): labeled axes with units, a fitted line or smooth, readable at a glance.\n\n# your code here"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#b2.-the-number",
+    "href": "weeks/week-01/lab.html#b2.-the-number",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "B2. The number",
+    "text": "B2. The number\nCompute the correlation between your two variables (if both are numeric). use = \"complete.obs\" handles the missing values.\n\n# your code here"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#b3.-the-sentences",
+    "href": "weeks/week-01/lab.html#b3.-the-sentences",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "B3. The sentences",
+    "text": "B3. The sentences\nWrite 2-3 sentences for a public health audience:\n\nWhat association do you see (direction, rough size)?\nName one plausible confounder that could produce this association without any causal effect.\n\nYour answer: …"
+  },
+  {
+    "objectID": "weeks/week-01/lab.html#b4.-exit-ticket",
+    "href": "weeks/week-01/lab.html#b4.-exit-ticket",
+    "title": "Lab 1: Exploring NHANES",
+    "section": "B4. Exit ticket",
+    "text": "B4. Exit ticket\nOne concept from today that is still muddy (this feeds next week’s warm-up quiz):\nYour answer: …"
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#a-famous-finding",
+    "href": "weeks/week-01/slides-b.html#a-famous-finding",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "A famous finding",
+    "text": "A famous finding\nMesserli (New England Journal of Medicine, 2012): national chocolate consumption vs Nobel laureates per capita.\n\n\nCode\nggplot(chocolate, aes(CHOCOLATE, NOBEL)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(x = \"Chocolate consumption (kg/yr/capita)\",\n       y = \"Nobel laureates per 10 million population\")"
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#the-correlation-is-real",
+    "href": "weeks/week-01/slides-b.html#the-correlation-is-real",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "The correlation is real",
+    "text": "The correlation is real\n\ncor(chocolate$CHOCOLATE, chocolate$NOBEL)\n\n[1] 0.8006078\n\n\n\nr = 0.79: stronger than most associations you will ever see in health data\nPublished in NEJM (tongue in cheek… mostly)\n\n\nPoll: So, should Norway hand out chocolate to boost its science output?\nA. Yes, the data are clear B. No: rich countries have both chocolate and research funding C. No: Nobel committees are Swiss and biased toward chocolate eaters D. We cannot tell from these data"
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#confounding",
+    "href": "weeks/week-01/slides-b.html#confounding",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "Confounding",
+    "text": "Confounding\n\nA confounder is a third variable driving both x and y\nHere: national wealth buys both chocolate and research universities\n\n\n\nCode\nggplot(chocolate, aes(INTERNET, NOBEL)) +\n  geom_point() + geom_smooth(method = \"lm\", se = FALSE) +\n  labs(x = \"Internet penetration (%)\", y = \"Nobel laureates per 10M\",\n       title = \"Internet access 'predicts' Nobel prizes too\")"
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#association-vs-causation-the-honest-hierarchy",
+    "href": "weeks/week-01/slides-b.html#association-vs-causation-the-honest-hierarchy",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "Association vs causation: the honest hierarchy",
+    "text": "Association vs causation: the honest hierarchy\n\nAssociation: y tends to be higher when x is higher (regression can show this)\nAdjusted association: …even after holding measured confounders fixed (regression can show this, if you measured the right things)\nCausation: changing x would change y (needs design: randomization, natural experiments, or strong assumptions)\n\n\nRegression is our tool for 1 and 2. Claiming 3 requires arguments outside the model. We will practice writing sentences that claim exactly as much as the analysis supports."
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#the-linear-model-formally",
+    "href": "weeks/week-01/slides-b.html#the-linear-model-formally",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "The linear model, formally",
+    "text": "The linear model, formally\nFor an outcome y and predictor x:\ny_i = \\beta_0 + \\beta_1 x_i + \\varepsilon_i, \\qquad i = 1, \\ldots, n\n\n\\beta_0: intercept, the mean of y when x = 0\n\\beta_1: slope, the difference in mean y per one-unit difference in x\n\\varepsilon_i: error, everything about y_i the line does not capture\n\n\nNext week: how to find the best \\beta_0, \\beta_1 and what “best” even means."
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#a-first-sighting-of-lm",
+    "href": "weeks/week-01/slides-b.html#a-first-sighting-of-lm",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "A first sighting of lm()",
+    "text": "A first sighting of lm()\n\nfit &lt;- lm(bp_sys ~ age, data = nhanes_adults)\ncoef(fit)\n\n(Intercept)         age \n100.4883689   0.4509181 \n\n\n\nRead: each additional year of age is associated with about 0.45 mmHg higher average systolic blood pressure\nBy next week you will know exactly where these numbers come from"
+  },
+  {
+    "objectID": "weeks/week-01/slides-b.html#lab-part-b-pairs",
+    "href": "weeks/week-01/slides-b.html#lab-part-b-pairs",
+    "title": "Week 1B: Association Is Not Causation",
+    "section": "Lab part B (pairs)",
+    "text": "Lab part B (pairs)\nPick an outcome and a predictor from nhanes_adults (not bp_sys ~ age).\n\nMake one polished scatterplot with a fitted line\nCompute the correlation\nWrite 2-3 sentences: what the plot shows, and one plausible confounder your claim ignores\n\n\nDeliverable: rendered lab qmd submitted to Gradescope by tonight. We will look at a few findings together at 1:25."
+  },
+  {
+    "objectID": "weeks/week-02/lab.html",
+    "href": "weeks/week-02/lab.html",
+    "title": "Lab 2: Your First Regression",
+    "section": "",
+    "text": "Download this lab as a .qmd file and open it in RStudio; this web page is just a preview.\nRender and submit to Gradescope by 11:59 PM tonight. Completion-graded.\nRun this setup chunk first (it rebuilds nhanes_adults exactly as in Lab 1).\nlibrary(tidyverse)\nlibrary(NHANES)\ntheme_set(theme_minimal(base_size = 14))\n\nnhanes_adults &lt;- NHANES |&gt;\n  filter(SurveyYr == \"2011_12\", Age &gt;= 20) |&gt;\n  distinct(ID, .keep_all = TRUE) |&gt;\n  select(\n    id = ID, age = Age, gender = Gender, race = Race1,\n    education = Education, income_mid = HHIncomeMid, poverty = Poverty,\n    height = Height, weight = Weight, bmi = BMI,\n    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,\n    tot_chol = TotChol, sleep_hrs = SleepHrsNight,\n    phys_active = PhysActive, smoker = Smoke100n,\n    alcohol_days = AlcoholYear, diabetes = Diabetes,\n    health_gen = HealthGen\n  )\n\nbp &lt;- nhanes_adults |&gt; drop_na(bp_sys, age)"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#a1.-fit-the-model",
+    "href": "weeks/week-02/lab.html#a1.-fit-the-model",
+    "title": "Lab 2: Your First Regression",
+    "section": "A1. Fit the model",
+    "text": "A1. Fit the model\n\nfit &lt;- lm(___ ~ ___, data = bp)\nsummary(fit)"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#a2.-interpret-precisely",
+    "href": "weeks/week-02/lab.html#a2.-interpret-precisely",
+    "title": "Lab 2: Your First Regression",
+    "section": "A2. Interpret, precisely",
+    "text": "A2. Interpret, precisely\nFill in each blank with a number from your output, then complete the sentences. Units matter.\n\n“Each additional year of age is associated with ____ mmHg ____ (higher/lower) average systolic blood pressure among US adults aged 20+.”\n“The intercept of ____ mmHg is the model’s average BP at age ____, which is (meaningful / not meaningful) here because ____.”"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#a3.-predict-by-hand",
+    "href": "weeks/week-02/lab.html#a3.-predict-by-hand",
+    "title": "Lab 2: Your First Regression",
+    "section": "A3. Predict by hand",
+    "text": "A3. Predict by hand\nUse coef(fit) and arithmetic (no predict() yet) to give the model’s expected systolic BP for:\n\nb &lt;- coef(fit)\nb[1] + b[2] * 40   # 40-year-old\nb[1] + b[2] * ___  # 70-year-old\nb[1] + b[2] * ___  # 10-year-old\n\nOne of these three predictions should not be trusted at all. Which, and why? …"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#a4.-draw-your-line",
+    "href": "weeks/week-02/lab.html#a4.-draw-your-line",
+    "title": "Lab 2: Your First Regression",
+    "section": "A4. Draw your line",
+    "text": "A4. Draw your line\nAdd the fitted line to the scatterplot using your coefficients (not geom_smooth).\n\nggplot(bp, aes(age, bp_sys)) +\n  geom_point(alpha = 0.2) +\n  geom_abline(intercept = ___, slope = ___, color = \"blue\", linewidth = 1)"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#a5.-residual-detective",
+    "href": "weeks/week-02/lab.html#a5.-residual-detective",
+    "title": "Lab 2: Your First Regression",
+    "section": "A5. Residual detective",
+    "text": "A5. Residual detective\n\nbp_aug &lt;- bp |&gt; mutate(resid = resid(fit))\nbp_aug |&gt; slice_max(resid, n = 3) |&gt; select(age, bp_sys, resid)\nbp_aug |&gt; slice_min(resid, n = 3) |&gt; select(age, bp_sys, resid)\n\nIn words: who does the model miss most badly, and in which direction? …"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#b1.-choose-and-justify-a-predictor",
+    "href": "weeks/week-02/lab.html#b1.-choose-and-justify-a-predictor",
+    "title": "Lab 2: Your First Regression",
+    "section": "B1. Choose and justify a predictor",
+    "text": "B1. Choose and justify a predictor\nPredictor: ____. Why do you expect a relationship (one sentence)? …"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#b2.-fit-and-plot",
+    "href": "weeks/week-02/lab.html#b2.-fit-and-plot",
+    "title": "Lab 2: Your First Regression",
+    "section": "B2. Fit and plot",
+    "text": "B2. Fit and plot\n\n# your code: fit the SLR, scatterplot with fitted line"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#b3.-report-like-a-professional",
+    "href": "weeks/week-02/lab.html#b3.-report-like-a-professional",
+    "title": "Lab 2: Your First Regression",
+    "section": "B3. Report like a professional",
+    "text": "B3. Report like a professional\nThree sentences: the slope with units and direction, the R-squared as a plain-language fraction of variation, and one caution (confounder or data limitation).\nYour answer: …"
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#b4.-post-to-the-board",
+    "href": "weeks/week-02/lab.html#b4.-post-to-the-board",
+    "title": "Lab 2: Your First Regression",
+    "section": "B4. Post to the board",
+    "text": "B4. Post to the board\nAdd your outcome, predictor, and R-squared to the shared class board before 1:25."
+  },
+  {
+    "objectID": "weeks/week-02/lab.html#b5.-exit-ticket",
+    "href": "weeks/week-02/lab.html#b5.-exit-ticket",
+    "title": "Lab 2: Your First Regression",
+    "section": "B5. Exit ticket",
+    "text": "B5. Exit ticket\nMuddiest point from today: …"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#fitted-values-and-residuals",
+    "href": "weeks/week-02/slides-b.html#fitted-values-and-residuals",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Fitted values and residuals",
+    "text": "Fitted values and residuals\nEvery observation splits into what the model explains and what it misses:\ny_i = \\underbrace{\\hat y_i}_{\\text{fitted}} + \\underbrace{e_i}_{\\text{residual}}\n\nbp_aug &lt;- bp |&gt;\n  mutate(fitted = fitted(fit), resid = resid(fit))\nbp_aug |&gt; select(age, bp_sys, fitted, resid) |&gt; head(4)\n\n  age bp_sys   fitted      resid\n1  43    103 119.8778 -16.877847\n2  80     97 136.5618 -39.561816\n3  34    107 115.8196  -8.819584\n4  80    121 136.5618 -15.561816\n\n\n\nResiduals always sum to zero for a least squares line with an intercept\nThe residuals are our window into everything the model gets wrong (Weeks 6-7 live here)"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#decomposing-variation",
+    "href": "weeks/week-02/slides-b.html#decomposing-variation",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Decomposing variation",
+    "text": "Decomposing variation\n\\underbrace{\\sum (y_i - \\bar y)^2}_{\\text{TSS: total}} = \\underbrace{\\sum (\\hat y_i - \\bar y)^2}_{\\text{explained}} + \\underbrace{\\sum e_i^2}_{\\text{RSS: residual}}\n\ntss &lt;- sum((bp$bp_sys - mean(bp$bp_sys))^2)\nrss &lt;- sum(resid(fit)^2)\nc(TSS = tss, RSS = rss, explained = tss - rss)\n\n      TSS       RSS explained \n 654131.5  522138.8  131992.7"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#why-the-decomposition-works",
+    "href": "weeks/week-02/slides-b.html#why-the-decomposition-works",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Why the decomposition works",
+    "text": "Why the decomposition works\nAdd and subtract the fitted value, then square and sum:\ny_i - \\bar y = (\\hat y_i - \\bar y) + e_i, \\qquad e_i = y_i - \\hat y_i\n\\sum (y_i - \\bar y)^2 = \\sum (\\hat y_i - \\bar y)^2 + \\sum e_i^2 + 2 \\underbrace{\\sum (\\hat y_i - \\bar y) e_i}_{\\text{cross term}}\nThe identity holds exactly when the cross term is zero. That is where least squares enters: it is a property of this line, not of any line."
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#the-normal-equations",
+    "href": "weeks/week-02/slides-b.html#the-normal-equations",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "The normal equations",
+    "text": "The normal equations\nLeast squares minimizes S(b_0, b_1) = \\sum_{i=1}^{n} (y_i - b_0 - b_1 x_i)^2. Set both partial derivatives to zero:\n\\begin{aligned}\n\\frac{\\partial S}{\\partial b_0} &= -2 \\sum (y_i - b_0 - b_1 x_i) = 0 \\\\[2pt]\n\\frac{\\partial S}{\\partial b_1} &= -2 \\sum x_i (y_i - b_0 - b_1 x_i) = 0\n\\end{aligned}\nAt the minimizers \\hat\\beta_0, \\hat\\beta_1 the parenthesis is the residual e_i, giving the normal equations \\sum e_i = 0 and \\sum x_i e_i = 0."
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#the-cross-term-vanishes",
+    "href": "weeks/week-02/slides-b.html#the-cross-term-vanishes",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "The cross term vanishes",
+    "text": "The cross term vanishes\nSince \\hat y_i = \\hat\\beta_0 + \\hat\\beta_1 x_i, split the sum:\n\\sum (\\hat y_i - \\bar y) e_i\n= \\hat\\beta_0 \\underbrace{\\sum e_i}_{0}\n+ \\hat\\beta_1 \\underbrace{\\sum x_i e_i}_{0}\n- \\bar y \\underbrace{\\sum e_i}_{0} = 0\nSubstituting back:\n\\underbrace{\\sum (y_i - \\bar y)^2}_{\\text{TSS}} = \\underbrace{\\sum (\\hat y_i - \\bar y)^2}_{\\text{explained}} + \\underbrace{\\sum e_i^2}_{\\text{RSS}} \\qquad \\blacksquare"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#checking-it-numerically",
+    "href": "weeks/week-02/slides-b.html#checking-it-numerically",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Checking it numerically",
+    "text": "Checking it numerically\n\ne &lt;- resid(fit)\ness &lt;- sum((fitted(fit) - mean(bp$bp_sys))^2)\nc(sum_e      = sum(e),\n  sum_xe     = sum(bp$age * e),\n  cross_term = sum((fitted(fit) - mean(bp$bp_sys)) * e),\n  tss_gap    = tss - (ess + rss))\n\n        sum_e        sum_xe    cross_term       tss_gap \n 1.040945e-12  1.928129e-10 -2.877698e-11 -4.656613e-10 \n\n\nZero up to floating point error, as promised."
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#r-squared",
+    "href": "weeks/week-02/slides-b.html#r-squared",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "R-squared",
+    "text": "R-squared\nR^2 = 1 - \\frac{RSS}{TSS} = \\text{fraction of variation in } y \\text{ captured by the line}\n\nc(by_hand = 1 - rss / tss,\n  from_summary = summary(fit)$r.squared,\n  cor_squared = cor(bp$bp_sys, bp$age)^2)\n\n     by_hand from_summary  cor_squared \n   0.2017832    0.2017832    0.2017832 \n\n\n\nIn simple regression, R^2 = r^2 exactly\nAge explains about 21% of BP variation: a strong result for one variable in individual-level health data"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#what-is-a-good-r-squared",
+    "href": "weeks/week-02/slides-b.html#what-is-a-good-r-squared",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "What is a “good” R-squared?",
+    "text": "What is a “good” R-squared?\n\nPhysics lab: 0.99. County averages: 0.6-0.8. Individual humans: 0.05-0.3\nIndividual outcomes are dominated by unmeasured biology and behavior; that is reality, not a failed model\nA tiny R^2 can still be a precise, important association (small effects on millions of people matter in public health)\n\n\n\n\n\n\n\n\nWarning\n\n\nR^2 never tells you whether the model is correct, causal, or useful for prediction of individuals. It is one number, not a verdict."
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#the-residual-standard-error",
+    "href": "weeks/week-02/slides-b.html#the-residual-standard-error",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "The residual standard error",
+    "text": "The residual standard error\n\nsigma(fit)\n\n[1] 15.82107\n\n\n\nTypical miss: about 16 mmHg\nOften more honest than R^2: it is in the units you care about\n“Knowing age narrows our BP guess to roughly plus or minus 15 mmHg” means something to a clinician"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#the-line-is-an-estimate-it-wobbles",
+    "href": "weeks/week-02/slides-b.html#the-line-is-an-estimate-it-wobbles",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "The line is an estimate: it wobbles",
+    "text": "The line is an estimate: it wobbles\nEach panel resamples 150 people from our data and refits.\n\n\nCode\nset.seed(2026)\nsims &lt;- map_dfr(1:6, \\(k) slice_sample(bp, n = 150) |&gt; mutate(sample = k))\nggplot(sims, aes(age, bp_sys)) +\n  geom_point(alpha = 0.2) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  facet_wrap(~sample) +\n  labs(x = \"Age\", y = \"Systolic BP\")\n\n\n\n\nDifferent samples, different lines. Quantifying that wobble is inference: Week 4."
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#think-pair-share-2-min",
+    "href": "weeks/week-02/slides-b.html#think-pair-share-2-min",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Think-pair-share (2 min)",
+    "text": "Think-pair-share (2 min)\nTwo studies of sleep and BMI report the same slope, but study A has R^2 =\n0.02 and study B has R^2 = 0.18.\n\nCan both be right?\nWhich study gives more precise individual predictions?\nDoes either establish that sleeping more lowers BMI?"
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#lab-part-b-pairs",
+    "href": "weeks/week-02/slides-b.html#lab-part-b-pairs",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Lab part B (pairs)",
+    "text": "Lab part B (pairs)\nEach pair takes a different outcome (assignments on the board): tot_chol, sleep_hrs, bmi, or pulse.\n\nChoose a predictor you expect to matter; fit the SLR\nInterpret slope and R^2 in context, with units\nPost your row to the shared board; we compare across outcomes at 1:25\n\nThe punchline we are engineering: sensible models of individual health outcomes with honest, small R^2 values, interpreted well."
+  },
+  {
+    "objectID": "weeks/week-02/slides-b.html#posting-to-the-shared-board",
+    "href": "weeks/week-02/slides-b.html#posting-to-the-shared-board",
+    "title": "Week 2B: How Good Is the Line?",
+    "section": "Posting to the shared board",
+    "text": "Posting to the shared board\nBoard: tinyurl.com/LRW2board\nFind the row with your pair number and fill in every column:\n\n\n\nPair\nOutcome\nPredictor\nn\nSlope (with units)\nR^2\n\n\n\n\n9\nbmi\nage\n4832\n0.041 kg/m^2 per year\n0.018\n\n\n\nThe slope with units is the part we discuss at 1:25, not just the R^2."
+  },
+  {
+    "objectID": "weeks/week-03/lab.html",
+    "href": "weeks/week-03/lab.html",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "",
+    "text": "Download this lab as a .qmd file and open it in RStudio; this web page is just a preview.\nRender and submit to Gradescope by 11:59 PM tonight. Completion-graded.\nRun this setup chunk first (it rebuilds nhanes_adults exactly as in Labs 1-2).\nlibrary(tidyverse)\nlibrary(NHANES)\ntheme_set(theme_minimal(base_size = 14))\n\nnhanes_adults &lt;- NHANES |&gt;\n  filter(SurveyYr == \"2011_12\", Age &gt;= 20) |&gt;\n  distinct(ID, .keep_all = TRUE) |&gt;\n  select(\n    id = ID, age = Age, gender = Gender, race = Race1,\n    education = Education, income_mid = HHIncomeMid, poverty = Poverty,\n    height = Height, weight = Weight, bmi = BMI,\n    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,\n    tot_chol = TotChol, sleep_hrs = SleepHrsNight,\n    phys_active = PhysActive, smoker = Smoke100n,\n    alcohol_days = AlcoholYear, diabetes = Diabetes,\n    health_gen = HealthGen\n  )\n\nd &lt;- nhanes_adults |&gt; drop_na(bp_sys, age, bmi, smoker, phys_active)"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#a1.-four-models",
+    "href": "weeks/week-03/lab.html#a1.-four-models",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "A1. Four models",
+    "text": "A1. Four models\nFit these four models and collect the smoker coefficient from each.\n\nm1 &lt;- lm(bp_sys ~ smoker, data = d)\nm2 &lt;- lm(bp_sys ~ smoker + age, data = d)\nm3 &lt;- lm(bp_sys ~ smoker + age + ___, data = d)          # add bmi\nm4 &lt;- lm(bp_sys ~ smoker + age + bmi + ___, data = d)    # add phys_active\n\ntibble(\n  model = c(\"unadjusted\", \"+ age\", \"+ age + bmi\", \"+ age + bmi + phys_active\"),\n  smoker_coef = c(coef(m1)[\"smokerSmoker\"], coef(m2)[\"smokerSmoker\"],\n                  coef(m3)[\"smokerSmoker\"], coef(m4)[\"smokerSmoker\"])\n)"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#a2.-explain-the-biggest-jump",
+    "href": "weeks/week-03/lab.html#a2.-explain-the-biggest-jump",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "A2. Explain the biggest jump",
+    "text": "A2. Explain the biggest jump\nBetween which two models does the smoking coefficient change most? Explain in one sentence what that tells you about the added variable. …"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#a3.-say-what-m2s-smoker-coefficient-means",
+    "href": "weeks/week-03/lab.html#a3.-say-what-m2s-smoker-coefficient-means",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "A3. Say what m2’s smoker coefficient means",
+    "text": "A3. Say what m2’s smoker coefficient means\nOne precise sentence (same-age comparison, association wording, population).\nYour answer: …"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#a4.-predict-before-you-peek",
+    "href": "weeks/week-03/lab.html#a4.-predict-before-you-peek",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "A4. Predict before you peek",
+    "text": "A4. Predict before you peek\neducation is in the dataset. Before fitting: do you expect adding it to m4 to move the smoking coefficient up, down, or barely at all? Why?\nYour prediction: …\nNow fit and check:\n\nd_ed &lt;- nhanes_adults |&gt;\n  drop_na(bp_sys, age, bmi, smoker, phys_active, education)\nm5 &lt;- lm(bp_sys ~ smoker + age + bmi + phys_active + education, data = d_ed)\ncoef(m5)[\"smokerSmoker\"]\n\nWas your prediction right? What actually happened? …"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#b1.-build-and-defend",
+    "href": "weeks/week-03/lab.html#b1.-build-and-defend",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "B1. Build and defend",
+    "text": "B1. Build and defend\nChoose 3-5 predictors of bp_sys from the dataset. For each, one clause on why it belongs.\n\n# your model here\n\nWhy these predictors: …"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#b2.-two-strong-form-interpretations",
+    "href": "weeks/week-03/lab.html#b2.-two-strong-form-interpretations",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "B2. Two strong-form interpretations",
+    "text": "B2. Two strong-form interpretations\nWrite the strong-form interpretation (adjusted-for-what, units, association language, population) for two coefficients of your choice.\n\n…\n…"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#b3.-peer-review",
+    "href": "weeks/week-03/lab.html#b3.-peer-review",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "B3. Peer review",
+    "text": "B3. Peer review\nSwap with the neighboring pair. Mark their two sentences: does each state the adjustment set, the units, association (not causation), and the population? Note what you fixed after feedback.\nWhat we revised: …"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#b4.-honest-limitations",
+    "href": "weeks/week-03/lab.html#b4.-honest-limitations",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "B4. Honest limitations",
+    "text": "B4. Honest limitations\nOne unmeasured confounder your model cannot address, and one variable you deliberately left out (with reason).\nYour answer: …"
+  },
+  {
+    "objectID": "weeks/week-03/lab.html#b5.-exit-ticket",
+    "href": "weeks/week-03/lab.html#b5.-exit-ticket",
+    "title": "Lab 3: Adjustment in Action",
+    "section": "B5. Exit ticket",
+    "text": "B5. Exit ticket\nMuddiest point from today: …"
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#the-matrix-view-a-5-minute-tour",
+    "href": "weeks/week-03/slides-b.html#the-matrix-view-a-5-minute-tour",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "The matrix view (a 5-minute tour)",
+    "text": "The matrix view (a 5-minute tour)\nStack the data:\n\\mathbf{y} = X\\boldsymbol\\beta + \\boldsymbol\\varepsilon, \\qquad\nX = \\begin{pmatrix} 1 & x_{11} & x_{12} \\\\ 1 & x_{21} & x_{22} \\\\ \\vdots & \\vdots & \\vdots \\\\ 1 & x_{n1} & x_{n2} \\end{pmatrix}\n\nX is the design matrix: one row per person, one column per term (including the 1s column for the intercept)\nLeast squares has one formula for any number of predictors: \\hat{\\boldsymbol\\beta} = (X^\\top X)^{-1} X^\\top \\mathbf{y}\nYou will never compute this by hand; you should recognize it, because every error message and every method in this course lives in this notation"
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#r-shows-you-the-design-matrix",
+    "href": "weeks/week-03/slides-b.html#r-shows-you-the-design-matrix",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "R shows you the design matrix",
+    "text": "R shows you the design matrix\n\nmodel.matrix(bp_sys ~ smoker + age, data = d) |&gt; head(4)\n\n  (Intercept) smokerSmoker age\n1           1            1  43\n2           1            0  80\n3           1            0  34\n4           1            0  80\n\n\n\nThe factor smoker became a 0/1 dummy column: this is how categorical predictors enter the math (much more in Week 9)"
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#one-formula-to-rule-them-all",
+    "href": "weeks/week-03/slides-b.html#one-formula-to-rule-them-all",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "One formula to rule them all",
+    "text": "One formula to rule them all\n\nXmat &lt;- model.matrix(bp_sys ~ age + bmi, data = d)\ny &lt;- d$bp_sys\nsolve(t(Xmat) %*% Xmat) %*% t(Xmat) %*% y\n\n                  [,1]\n(Intercept) 93.0870579\nage          0.4436233\nbmi          0.2693857\n\ncoef(fit2)\n\n(Intercept)         age         bmi \n 93.0870579   0.4436233   0.2693857 \n\n\nSame numbers. lm() is not magic, just organized linear algebra (with better numerics)."
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#r-squared-always-rises-adjusted-r-squared-tells-the-truth",
+    "href": "weeks/week-03/slides-b.html#r-squared-always-rises-adjusted-r-squared-tells-the-truth",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "R-squared always rises; adjusted R-squared tells the truth",
+    "text": "R-squared always rises; adjusted R-squared tells the truth\n\n\nCode\nset.seed(2026)\nd_noise &lt;- d |&gt; mutate(noise1 = rnorm(n()), noise2 = rnorm(n()))\ntibble(\n  model = c(\"age\", \"age+bmi\", \"age+bmi+noise1\", \"age+bmi+noise1+noise2\"),\n  r2 = c(summary(lm(bp_sys ~ age, d_noise))$r.squared,\n         summary(lm(bp_sys ~ age + bmi, d_noise))$r.squared,\n         summary(lm(bp_sys ~ age + bmi + noise1, d_noise))$r.squared,\n         summary(lm(bp_sys ~ age + bmi + noise1 + noise2, d_noise))$r.squared),\n  adj_r2 = c(summary(lm(bp_sys ~ age, d_noise))$adj.r.squared,\n             summary(lm(bp_sys ~ age + bmi, d_noise))$adj.r.squared,\n             summary(lm(bp_sys ~ age + bmi + noise1, d_noise))$adj.r.squared,\n             summary(lm(bp_sys ~ age + bmi + noise1 + noise2, d_noise))$adj.r.squared)\n) |&gt; mutate(across(r2:adj_r2, ~round(.x, 5)))\n\n\n# A tibble: 4 × 3\n  model                    r2 adj_r2\n  &lt;chr&gt;                 &lt;dbl&gt;  &lt;dbl&gt;\n1 age                   0.200  0.200\n2 age+bmi               0.211  0.210\n3 age+bmi+noise1        0.211  0.210\n4 age+bmi+noise1+noise2 0.212  0.210\n\n\n\nnoise1, noise2 are pure random numbers, yet R^2 still creeps up\nAdjusted R^2 charges a small rent per predictor: R^2_{adj} = 1 - \\frac{RSS/(n - p - 1)}{TSS/(n-1)}\nModel selection done right comes in Week 10; today’s lesson is just: never compare models of different sizes by raw R^2"
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#what-adjustment-cannot-do",
+    "href": "weeks/week-03/slides-b.html#what-adjustment-cannot-do",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "What adjustment cannot do",
+    "text": "What adjustment cannot do\n\nUnmeasured confounders: adjusting for age does nothing about diet, stress, income (unless measured and included)\nBad controls: adjusting for a consequence of the exposure can create bias (e.g., adjusting for a medication taken because of high BP)\nMeasurement error: adjusting for a noisy version of a confounder removes only part of its confounding\n\n\n\n\n\n\n\n\n\nThe discipline\n\n\nA regression model is an argument, not an oracle. Every variable you include (or omit) is a claim you should be able to defend out loud."
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#precision-of-language-a-grading-preview",
+    "href": "weeks/week-03/slides-b.html#precision-of-language-a-grading-preview",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "Precision of language: a grading preview",
+    "text": "Precision of language: a grading preview\nTwo answers to “interpret the BMI coefficient (+0.27)”:\n\nWeak: “BMI increases blood pressure by 0.27.”\nStrong: “Comparing adults of the same age, each additional unit of BMI is associated with 0.27 mmHg higher average systolic blood pressure in NHANES 2011-2012.”\n\n\nThe strong version earns full credit on every homework and the exam. Adjusted for what, per what unit, association not causation, in which population."
+  },
+  {
+    "objectID": "weeks/week-03/slides-b.html#lab-part-b-pairs",
+    "href": "weeks/week-03/slides-b.html#lab-part-b-pairs",
+    "title": "Week 3B: Under the Hood of Multiple Regression",
+    "section": "Lab part B (pairs)",
+    "text": "Lab part B (pairs)\nBuild your own 3-5 predictor model of bp_sys.\n\nChoose predictors you can defend; fit the model\nWrite a precise interpretation of two coefficients (strong form)\nSwap write-ups with a neighboring pair; mark each other’s sentences using the weak/strong criteria; revise\nExit ticket as usual"
+  },
+  {
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "Week 5: Prediction, Intervals & Extrapolation",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Oct 4, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 5: Prediction, Intervals & Extrapolation"
+    ]
+  },
+  {
+    "objectID": "weeks/week-05.html#before-class",
+    "href": "weeks/week-05.html#before-class",
+    "title": "Week 5: Prediction, Intervals & Extrapolation",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway Ch 4",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 5: Prediction, Intervals & Extrapolation"
+    ]
+  },
+  {
+    "objectID": "weeks/week-07.html",
+    "href": "weeks/week-07.html",
+    "title": "Week 7: Diagnostics II: Normality, Leverage & Influence",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Oct 18, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 7: Diagnostics II: Normality, Leverage & Influence"
+    ]
+  },
+  {
+    "objectID": "weeks/week-07.html#before-class",
+    "href": "weeks/week-07.html#before-class",
+    "title": "Week 7: Diagnostics II: Normality, Leverage & Influence",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway 5.4–5.6",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 7: Diagnostics II: Normality, Leverage & Influence"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html",
+    "href": "weeks/week-09.html",
+    "title": "Week 9: Categorical Predictors & Interaction Models",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Nov 1, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 9: Categorical Predictors & Interaction Models"
+    ]
+  },
+  {
+    "objectID": "weeks/week-09.html#before-class",
+    "href": "weeks/week-09.html#before-class",
+    "title": "Week 9: Categorical Predictors & Interaction Models",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Faraway Ch 8",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 9: Categorical Predictors & Interaction Models"
+    ]
+  },
+  {
+    "objectID": "weeks/week-11.html",
+    "href": "weeks/week-11.html",
+    "title": "Week 11: Integrative Case Study & Exam Review",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Nov 15, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 11: Integrative Case Study & Exam Review"
+    ]
+  },
+  {
+    "objectID": "weeks/week-11.html#before-class",
+    "href": "weeks/week-11.html#before-class",
+    "title": "Week 11: Integrative Case Study & Exam Review",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Review Materials",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 11: Integrative Case Study & Exam Review"
+    ]
+  },
+  {
+    "objectID": "weeks/week-13.html",
+    "href": "weeks/week-13.html",
+    "title": "Week 13: Project Presentations I",
+    "section": "",
+    "text": "Note🔒 Not yet released\n\n\n\nMaterials for this week (slides, lab, and homework) unlock automatically on Sunday, Nov 29, 2026 at 8:00 AM ET.",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 13: Project Presentations I"
+    ]
+  },
+  {
+    "objectID": "weeks/week-13.html#before-class",
+    "href": "weeks/week-13.html#before-class",
+    "title": "Week 13: Project Presentations I",
+    "section": "Before class",
+    "text": "Before class\n\nRead: Peer Rubrics",
+    "crumbs": [
+      "Weekly Pages",
+      "Week 13: Project Presentations I"
+    ]
+  }
+]
