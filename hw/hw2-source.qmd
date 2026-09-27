@@ -1,0 +1,102 @@
+---
+title: "Homework 2"
+subtitle: "Regression I, Fall 2026. Assigned Sep 29, due Tuesday Oct 13, 11:59 PM on Gradescope"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="hw2-source.qmd" download="hw2.qmd">**Download this assignment as a .qmd
+file**</a> to use as your starting template.
+
+**Instructions.** Complete this assignment in Quarto or R Markdown and submit
+a rendered PDF to Gradescope. Show your code. Interpretation questions are
+graded on precision (adjusted for what, units, association vs causation,
+population), exactly as practiced in the labs. End with your AI-use statement
+(see Section 4).
+
+**Data.** The Stanford prostate cancer study: 97 men about to receive a
+radical prostatectomy, with pre-surgery measurements:
+
+```{r}
+library(tidyverse)
+data(prostate, package = "faraway")
+```
+
+Variables used below: `lpsa` = log of prostate-specific antigen (PSA, log
+ng/ml), `lcavol` = log cancer volume (log cm^3^), `lweight` = log prostate
+weight (log g), `age` = age (years), `svi` = seminal vesicle invasion
+(1 = yes, 0 = no). Note that the outcome and two predictors are on the log
+scale; interpret their coefficients in log units.
+
+# Section 1: Do (6 points)
+
+**1.1** Describe the outcome `lpsa`: a histogram plus a short numerical
+summary. Two sentences on center, spread, and shape, remembering the units
+are log ng/ml. (2 pts)
+
+**1.2** Fit the multiple regression of `lpsa` on `lcavol`, `lweight`, `age`,
+and `svi`. Report the coefficient table (estimates, standard errors, t values,
+p-values) and the residual standard error. (2 pts)
+
+**1.3** Report 95% confidence intervals for all coefficients using
+`confint()`. State which intervals exclude zero. (2 pts)
+
+# Section 2: Interpret (8 points; interpretation precision counts double)
+
+**2.1** Write the strong-form interpretation of the `svi` coefficient in one
+sentence, incorporating its confidence interval. Remember: `svi` is binary,
+the outcome is log PSA, and the sentence must state the adjustment set, the
+comparison being made, association wording, and the population. (2 pts)
+
+**2.2** The confidence interval for `age` contains zero. Write two sentences
+giving the correct interpretation of this interval: what range of age
+associations is compatible with the data, and what the interval does and does
+not allow you to conclude. (2 pts)
+
+**2.3** Test whether `age` and `lweight` jointly add anything beyond `lcavol`
+and `svi`: fit the reduced model `lpsa ~ lcavol + svi` and compare it to the
+full model with `anova()`. State the null hypothesis of this F test in words,
+report F and the p-value, and give your conclusion in one sentence. (2 pts)
+
+**2.4** Your answers to 2.2 and 2.3 may feel like they pull in opposite
+directions: `age` looks unimportant on its own, yet the pair (`age`,
+`lweight`) is jointly significant. In two or three sentences, reconcile this
+using the distinction between statistical and practical significance and the
+difference between individual and joint tests. Which single variable is doing
+the work in the joint test, and how can you tell from the coefficient table?
+(2 pts)
+
+# Section 3: Critique the AI (6 points)
+
+A student pasted this dataset description into an AI assistant and asked for
+an inference write-up. The assistant replied:
+
+> "I fit `lpsa ~ lcavol + lweight + age + svi` on the 97 patients. The 95%
+> confidence interval for `age` was (-0.030, 0.012); because this interval
+> contains zero, we know the true effect of age is zero, so dropping age
+> changes nothing. The p-value for `svi` was 0.002, meaning there is a 99.8%
+> probability that seminal vesicle invasion affects PSA. Comparing
+> `lpsa ~ lcavol + svi` against the full model, `anova()` gave F = 6.11 with
+> p = 0.003, which proves that `age` and `lweight` each individually improve
+> the model. Also, `lcavol`'s t statistic of 7.43 is more than double `svi`'s
+> 3.17, so cancer volume has more than twice as large an effect on PSA as
+> seminal vesicle invasion. Age itself was clearly irrelevant (p = 0.52)."
+
+**3.1** This paragraph contains at least four distinct statistical errors.
+Identify each one you find (quote the offending phrase), and explain in one
+or two sentences why it is wrong. Finding four earns full credit; a fifth
+earns a bonus point. (4 pts + 1 bonus)
+
+**3.2** Verify the AI's inference claims about `age` by fitting the models
+yourself. Report the actual p-value for `age` in the full model and the
+actual F and p-value from the nested `anova()` comparison, state which of the
+AI's numbers do not match, and write the correct one-sentence conclusion
+about what the joint test does and does not show. (2 pts)
+
+# Section 4: AI-use statement (required, ungraded)
+
+One or two sentences: which AI tools you used on this assignment and for what,
+or "No AI tools used." Note that Section 3 asks you to critique provided AI
+output; using an AI to critique the AI is permitted, but the errors you report
+are yours to defend.

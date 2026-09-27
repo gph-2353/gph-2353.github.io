@@ -1,0 +1,54 @@
+/* Course website tweaks */
+:root {
+  --nyu-violet: #57068c;
+  --nyu-ultra-violet: #8900e1;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+table {
+  font-size: 0.95em;
+}
+
+/* Schedule table vertical alignment */
+.schedule-table td, table td {
+  vertical-align: top;
+}
+
+/* Callout styling */
+div.callout-tip.activity > .callout-header {
+  background-color: rgba(87, 6, 140, 0.1);
+}
+
+/* RevealJS Slide Column Spacing & Text Wrap */
+.reveal .columns {
+  display: flex !important;
+  gap: 35px !important;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  box-sizing: border-box;
+}
+
+.reveal code {
+  word-break: break-word !important;
+}
+
+.reveal pre {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.reveal h1, .reveal h2 {
+  font-weight: 600;
+}
