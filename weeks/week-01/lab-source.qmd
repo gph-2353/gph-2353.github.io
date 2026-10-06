@@ -1,0 +1,147 @@
+---
+title: "Lab 1: Exploring NHANES"
+subtitle: "Week 1, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-01.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Welcome to your first lab. Work through Part A on your own (ask for help
+freely); Part B is done in pairs. Render this document (the **Render** button)
+and submit the HTML or PDF to Gradescope by 11:59 PM tonight. Labs are graded
+on completion.
+
+Run this setup chunk first. It loads the packages and builds `nhanes_adults`,
+the dataset we use all semester (US adults 20+ from NHANES 2011-2012).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(NHANES)
+theme_set(theme_minimal(base_size = 14))
+
+nhanes_adults <- NHANES |>
+  filter(SurveyYr == "2011_12", Age >= 20) |>
+  distinct(ID, .keep_all = TRUE) |>
+  select(
+    id = ID, age = Age, gender = Gender, race = Race1,
+    education = Education, income_mid = HHIncomeMid, poverty = Poverty,
+    height = Height, weight = Weight, bmi = BMI,
+    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,
+    tot_chol = TotChol, sleep_hrs = SleepHrsNight,
+    phys_active = PhysActive, smoker = Smoke100n,
+    alcohol_days = AlcoholYear, diabetes = Diabetes,
+    health_gen = HealthGen
+  )
+```
+
+# Part A: Guided exploration (11:40-12:10)
+
+## A1. First look
+
+Run each line and read the output. What does one row represent?
+
+```{r}
+dim(nhanes_adults)
+glimpse(nhanes_adults)
+```
+
+**Your answer (1 sentence):** ...
+
+## A2. Summarize the outcome we will use all semester
+
+Fill in the blank to summarize systolic blood pressure (`bp_sys`).
+
+```{r}
+#| eval: false
+summary(nhanes_adults$___)
+```
+
+**How many missing values does it have? Why might blood pressure be missing in
+a health survey?** ...
+
+## A3. Pictures beat tables
+
+Make a histogram of `bp_sys`. Then try changing `bins` to 10 and to 100.
+
+```{r}
+#| eval: false
+ggplot(nhanes_adults, aes(x = ___)) +
+  geom_histogram(bins = 30)
+```
+
+**Describe the shape (symmetric? skewed? outliers?):** ...
+
+## A4. A categorical predictor
+
+`smoker` records whether the person has smoked 100+ cigarettes in their life.
+
+```{r}
+#| eval: false
+nhanes_adults |>
+  count(___)
+
+ggplot(nhanes_adults, aes(x = smoker, y = bp_sys)) +
+  geom_boxplot()
+```
+
+**Which group has higher median blood pressure? Is that what you expected?** ...
+
+## A5. Hunting for data problems
+
+Real data are messy. Investigate `sleep_hrs`:
+
+```{r}
+#| eval: false
+summary(nhanes_adults$sleep_hrs)
+nhanes_adults |>
+  count(sleep_hrs) |>
+  arrange(desc(sleep_hrs))
+```
+
+**Do any values look implausible or suspiciously rounded? What would you do
+about them in a real analysis?** ...
+
+# Part B: Your own question (12:50-13:25, in pairs)
+
+With your partner, pick **one outcome** and **one predictor** from
+`nhanes_adults` (any pair except `bp_sys` and `age`).
+
+## B1. The plot
+
+One polished scatterplot (or boxplot if your predictor is categorical): labeled
+axes with units, a fitted line or smooth, readable at a glance.
+
+```{r}
+# your code here
+```
+
+## B2. The number
+
+Compute the correlation between your two variables (if both are numeric).
+`use = "complete.obs"` handles the missing values.
+
+```{r}
+# your code here
+```
+
+## B3. The sentences
+
+Write 2-3 sentences for a public health audience:
+
+1. What association do you see (direction, rough size)?
+2. Name one **plausible confounder** that could produce this association
+   without any causal effect.
+
+**Your answer:** ...
+
+## B4. Exit ticket
+
+One concept from today that is still muddy (this feeds next week's warm-up
+quiz):
+
+**Your answer:** ...
