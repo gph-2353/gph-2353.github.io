@@ -1,0 +1,128 @@
+---
+title: "Lab 3: Adjustment in Action"
+subtitle: "Week 3, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-03.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render and submit to Gradescope by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `nhanes_adults` exactly as in Labs 1-2).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(NHANES)
+theme_set(theme_minimal(base_size = 14))
+
+nhanes_adults <- NHANES |>
+  filter(SurveyYr == "2011_12", Age >= 20) |>
+  distinct(ID, .keep_all = TRUE) |>
+  select(
+    id = ID, age = Age, gender = Gender, race = Race1,
+    education = Education, income_mid = HHIncomeMid, poverty = Poverty,
+    height = Height, weight = Weight, bmi = BMI,
+    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,
+    tot_chol = TotChol, sleep_hrs = SleepHrsNight,
+    phys_active = PhysActive, smoker = Smoke100n,
+    alcohol_days = AlcoholYear, diabetes = Diabetes,
+    health_gen = HealthGen
+  )
+
+d <- nhanes_adults |> drop_na(bp_sys, age, bmi, smoker, phys_active)
+```
+
+# Part A: The smoking story (11:40-12:10)
+
+## A1. Four models
+
+Fit these four models and collect the smoker coefficient from each.
+
+```{r}
+#| eval: false
+m1 <- lm(bp_sys ~ smoker, data = d)
+m2 <- lm(bp_sys ~ smoker + age, data = d)
+m3 <- lm(bp_sys ~ smoker + age + ___, data = d)          # add bmi
+m4 <- lm(bp_sys ~ smoker + age + bmi + ___, data = d)    # add phys_active
+
+tibble(
+  model = c("unadjusted", "+ age", "+ age + bmi", "+ age + bmi + phys_active"),
+  smoker_coef = c(coef(m1)["smokerSmoker"], coef(m2)["smokerSmoker"],
+                  coef(m3)["smokerSmoker"], coef(m4)["smokerSmoker"])
+)
+```
+
+## A2. Explain the biggest jump
+
+**Between which two models does the smoking coefficient change most? Explain in
+one sentence what that tells you about the added variable.** ...
+
+## A3. Say what m2's smoker coefficient means
+
+One precise sentence (same-age comparison, association wording, population).
+
+**Your answer:** ...
+
+## A4. Predict before you peek
+
+`education` is in the dataset. **Before fitting:** do you expect adding it to
+m4 to move the smoking coefficient up, down, or barely at all? Why?
+
+**Your prediction:** ...
+
+Now fit and check:
+
+```{r}
+#| eval: false
+d_ed <- nhanes_adults |>
+  drop_na(bp_sys, age, bmi, smoker, phys_active, education)
+m5 <- lm(bp_sys ~ smoker + age + bmi + phys_active + education, data = d_ed)
+coef(m5)["smokerSmoker"]
+```
+
+**Was your prediction right? What actually happened?** ...
+
+# Part B: Your model (12:50-13:25, in pairs)
+
+## B1. Build and defend
+
+Choose 3-5 predictors of `bp_sys` from the dataset. For each, one clause on
+why it belongs.
+
+```{r}
+# your model here
+```
+
+**Why these predictors:** ...
+
+## B2. Two strong-form interpretations
+
+Write the strong-form interpretation (adjusted-for-what, units, association
+language, population) for two coefficients of your choice.
+
+1. ...
+2. ...
+
+## B3. Peer review
+
+Swap with the neighboring pair. Mark their two sentences: does each state the
+adjustment set, the units, association (not causation), and the population?
+Note what you fixed after feedback.
+
+**What we revised:** ...
+
+## B4. Honest limitations
+
+One unmeasured confounder your model cannot address, and one variable you
+deliberately left out (with reason).
+
+**Your answer:** ...
+
+## B5. Exit ticket
+
+Muddiest point from today: ...

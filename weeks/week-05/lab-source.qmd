@@ -1,0 +1,138 @@
+---
+title: "Lab 5: Predicting County Uninsured Rates"
+subtitle: "Week 5, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-05.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render and submit to Gradescope by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first. It builds `county_health`, this course's
+county-level dataset (US counties, ACS 2019, via the usdata package). One row
+= one county.
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(usdata)
+theme_set(theme_minimal(base_size = 14))
+
+data(county_complete)
+county_health <- county_complete |>
+  select(
+    state, name, fips, pop = pop_2019, uninsured = uninsured_2019,
+    poverty = poverty_2019, median_income = median_household_income_2019,
+    per_capita_income = per_capita_income_2019,
+    unemployment = unemployment_rate_2019, bachelors = bachelors_2019,
+    hs_grad = hs_grad_2019, median_age = median_age_2019,
+    broadband = household_has_broadband_2019, density = density_2010
+  ) |>
+  as_tibble()
+
+ch <- county_health |> drop_na(uninsured, poverty, unemployment, median_age)
+```
+
+# Part A: Predictions with honest error bars (11:40-12:10)
+
+## A1. Fit the model
+
+```{r}
+#| eval: false
+m <- lm(uninsured ~ poverty + unemployment + ___, data = ch)  # add median_age
+summary(m)
+```
+
+**In one clause each: which predictors have clear associations with the
+uninsured rate, and which one could plausibly be dropped?** ...
+
+## A2. A hypothetical county, two intervals
+
+A county profile: poverty 15%, unemployment 5%, median age 40.
+
+```{r}
+#| eval: false
+profile <- tibble(poverty = 15, unemployment = 5, median_age = ___)
+predict(m, newdata = profile, interval = "___")   # mean response
+predict(m, newdata = profile, interval = "___")   # single new county
+```
+
+Fill in from your output:
+
+- Point prediction: ___% uninsured.
+- 95% confidence interval: ___ to ___.
+- 95% prediction interval: ___ to ___.
+
+**Which interval answers "what is the average uninsured rate among all
+counties with this profile," and which answers "what rate might this one new
+county have"?** ...
+
+## A3. A real county
+
+```{r}
+#| eval: false
+bronx <- ch |> filter(state == "New York", name == "Bronx County")
+bronx |> select(name, uninsured, poverty, unemployment, median_age)
+predict(m, newdata = bronx, interval = "prediction")
+```
+
+**Where does the Bronx's actual uninsured rate fall relative to the model's
+prediction interval? Name one real-world feature of New York (invisible to
+these three predictors) that could explain the gap between the point
+prediction and the actual value.** ...
+
+## A4. The widest sensible statement
+
+Using your A2 numbers, complete both, then answer:
+
+- "Among all US counties with poverty 15%, unemployment 5%, and median age
+  40, the average uninsured rate is between ___ and ___ (95% confidence)."
+- "A single new county with this profile could plausibly have an uninsured
+  rate anywhere between ___ and ___ (95% prediction)."
+
+**Which of the two is the widest statement the model honestly supports about
+one county, and why would quoting the narrower interval for that purpose be
+misleading?** ...
+
+# Part B: Break the model on purpose (12:50-13:25, in pairs)
+
+Your job is to find requests the model will answer confidently but should
+not.
+
+## B1. Hunt for extrapolation
+
+Build at least three `newdata` profiles where prediction is unjustified. Get
+at least one of each kind:
+
+- a predictor value outside its observed range (check ranges with
+  `summary()` or `range()`; try poverty 60%),
+- a combination where each value is in range but no real county is nearby
+  (scatterplots of predictor pairs will show the empty zones).
+
+```{r}
+# your profiles, range checks, plots, and predictions here
+```
+
+## B2. Document the confident nonsense
+
+For your worst case: the model's point prediction and 95% prediction
+interval, plus 1-2 sentences on how you know the data cannot support it.
+
+**Your answer:** ...
+
+## B3. Your refusal policy
+
+Write 2-3 sentences, as if to a policymaker, stating when your team would
+refuse to report a prediction from this model (cover both kinds of
+extrapolation, and say something about counties or years the data do not
+represent).
+
+**Your policy:** ...
+
+## B4. Exit ticket
+
+Muddiest point from today: ...

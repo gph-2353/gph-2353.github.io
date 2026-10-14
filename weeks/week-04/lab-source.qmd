@@ -1,0 +1,134 @@
+---
+title: "Lab 4: Is It Real, or Is It Noise?"
+subtitle: "Week 4, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-04.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render and submit to Gradescope by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `nhanes_adults` exactly as in Labs 1-3).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(NHANES)
+theme_set(theme_minimal(base_size = 14))
+
+nhanes_adults <- NHANES |>
+  filter(SurveyYr == "2011_12", Age >= 20) |>
+  distinct(ID, .keep_all = TRUE) |>
+  select(
+    id = ID, age = Age, gender = Gender, race = Race1,
+    education = Education, income_mid = HHIncomeMid, poverty = Poverty,
+    height = Height, weight = Weight, bmi = BMI,
+    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,
+    tot_chol = TotChol, sleep_hrs = SleepHrsNight,
+    phys_active = PhysActive, smoker = Smoke100n,
+    alcohol_days = AlcoholYear, diabetes = Diabetes,
+    health_gen = HealthGen
+  )
+
+d <- nhanes_adults |> drop_na(bp_sys, age, bmi, smoker)
+```
+
+# Part A: The full inference walkthrough (11:40-12:10)
+
+## A1. Fit and read the table
+
+Fit the week 3 model plus BMI, then look at the whole summary.
+
+```{r}
+#| eval: false
+m <- lm(bp_sys ~ smoker + age + ___, data = d)   # add bmi
+summary(m)
+```
+
+Fill in each blank from the `smoker` row of the coefficient table:
+
+- Estimate: ___ mmHg
+- Std. Error: ___ mmHg
+- t value: ___ (which is Estimate divided by ___)
+- p-value: ___
+
+## A2. Say the p-value precisely
+
+**Complete this sentence so it is exactly what the smoker p-value means:**
+"If smoking had no association with systolic BP after adjusting for ___ and
+___, we would see a smoker coefficient at least this far from zero in about
+___% of samples."
+
+## A3. Confidence intervals
+
+```{r}
+#| eval: false
+confint(___)
+```
+
+**The 95% CI for the smoker coefficient runs from ___ to ___ mmHg.** Now the
+strong-form sentence, week 4 edition. Fill in every blank:
+
+"Adjusting for ___ and ___, US adults in NHANES 2011-2012 who have smoked
+100+ cigarettes average ___ mmHg higher systolic blood pressure than
+never-smokers (95% CI ___ to ___, p = ___). This is an ___, not a causal
+effect."
+
+## A4. Test two terms at once
+
+Does the pair (smoker, bmi) jointly add anything beyond age? This is one
+question about two coefficients, so use a nested `anova()` comparison, not
+two separate t-tests.
+
+```{r}
+#| eval: false
+m_small <- lm(bp_sys ~ ___, data = d)            # age only
+anova(m_small, ___)                              # compare to the full model
+```
+
+- The `Df` column shows ___ because the full model adds ___ coefficients.
+- **State the conclusion in one sentence, mentioning the F statistic and the
+  p-value:** ...
+
+# Part B: Pre-registered inference (12:50-13:25, in pairs)
+
+Real trials write the hypothesis down before touching the data. You will do a
+small version of that now. **Do B1 completely before running any code.**
+
+## B1. Pre-register
+
+Pick any NHANES association you have not already tested in this course
+(examples: sleep and BP, physical activity and cholesterol, diabetes and
+pulse). Write down, in words and before fitting:
+
+- Outcome: ...
+- Exposure of interest: ...
+- Adjustment set (which confounders, and why each one): ...
+- H0: ...
+- H1 (state a direction if you believe one): ...
+
+## B2. Fit exactly what you registered
+
+```{r}
+# your pre-registered model here
+```
+
+No swapping variables after seeing the output. If the result is null, that is
+a finding, not a failure.
+
+## B3. Journal-style report
+
+Write 2-3 sentences as they would appear in a results section: point
+estimate with units, 95% CI, p-value, the population, and one honest caveat
+(an unmeasured confounder, a measurement limitation, or the
+observational-design caution).
+
+**Your report:** ...
+
+## B4. Exit ticket
+
+Muddiest point from today: ...
