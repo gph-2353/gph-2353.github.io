@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
+
+  <meta name="author" content="Yang Feng">
+  <meta name="dcterms.date" content="2026-10-13">
+  <title>Regression I – Week 6A: Reading the Residuals</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../../styles.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Week 6A: Reading the Residuals</h1>
+  <p class="subtitle">Regression I: Linear Regression with Modeling (GPH-GU 2353/3353)</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Yang Feng
+</div>
+</div>
+</div>
+
+  <p class="date">2026-10-13</p>
+</section>
+<section id="this-weeks-question" class="slide level2">
+<h2>This week’s question</h2>
+<p><strong>Your model makes assumptions; the residuals show where it breaks them.</strong></p>
+<ul>
+<li>Every <code>lm()</code> you have fit so far came with fine print you signed without reading</li>
+<li>Weeks 4-5 (t tests, CIs, prediction intervals) all lean on that fine print</li>
+<li>This week and next: how to read the fine print, and how to catch the model breaking it</li>
+<li>The informants are the <strong>residuals</strong> <span class="math inline">e_i = y_i - \hat y_i</span>: everything the model got wrong, one number per observation</li>
+</ul>
+</section>
+<section id="the-fine-print-the-model" class="slide level2">
+<h2>The fine print: the model</h2>
+<p><span class="math display">y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_p x_{ip} + \varepsilon_i</span></p>
+<ul>
+<li>The standard assumptions are all about the errors <span class="math inline">\varepsilon_i</span></li>
+<li>We never see <span class="math inline">\varepsilon_i</span>. We see the residuals <span class="math inline">e_i</span>, which estimate them</li>
+</ul>
+</section>
+<section id="the-fine-print-four-assumptions-on-the-errors" class="slide level2 scrollable">
+<h2>The fine print: four assumptions on the errors</h2>
+<ol type="1">
+<li><strong>Mean zero given the predictors</strong>: the linear form is right; nothing systematic is left over</li>
+<li><strong>Constant variance</strong>: the scatter around the line is the same everywhere (<span class="math inline">\operatorname{Var}(\varepsilon_i) = \sigma^2</span>)</li>
+<li><strong>Independence</strong>: one observation’s error tells you nothing about another’s</li>
+<li><strong>Normality</strong>: the errors follow a normal distribution</li>
+</ol>
+</section>
+<section id="rank-them-not-all-violations-are-equal" class="slide level2">
+<h2>Rank them: not all violations are equal</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Assumption</th>
+<th>If violated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Mean zero (linearity)</td>
+<td>Estimates aim at the wrong target</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Constant variance</td>
+<td>Slopes fine; SEs, CIs, PIs wrong</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Independence</td>
+<td>SEs can be badly off</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Normality</td>
+<td>Matters least: PIs, small <span class="math inline">n</span> (Week 7)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="using-the-ranking" class="slide level2">
+<h2>Using the ranking</h2>
+<ul>
+<li>The ranking guides your energy: chase curvature first, fans second</li>
+<li>Independence is mostly a <strong>design</strong> question (repeated measures? clustered? time-ordered?), not a plot question</li>
+</ul>
+</section>
+<section id="why-residuals-vs-fitted-is-the-workhorse" class="slide level2">
+<h2>Why residuals vs fitted is the workhorse</h2>
+<ul>
+<li>Plot <span class="math inline">e_i</span> (vertical) against <span class="math inline">\hat y_i</span> (horizontal)</li>
+<li>If the model is right, residuals are what is left after removing all structure: the plot should be a <strong>boring, structureless blob</strong> centered at zero</li>
+<li>Anything visible (a curve, a fan, a stray point) is structure the model missed</li>
+<li>One plot works for any number of predictors, because <span class="math inline">\hat y_i</span> compresses them all onto one axis</li>
+</ul>
+</section>
+<section id="the-workhorse-on-a-familiar-model" class="slide level2">
+<h2>The workhorse on a familiar model</h2>
+<div title="The null plot">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The null plot</strong></p>
+</div>
+<div class="callout-content">
+<p>Train your eyes on what “nothing” looks like. Diagnosing is comparing your plot to boring.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(fit_bp), <span class="fu">resid</span>(fit_bp),</span>
+<span id="cb1-2"><a aria-label="2"></a>     <span class="at">xlab =</span> <span class="st">"Fitted values"</span>, <span class="at">ylab =</span> <span class="st">"Residuals"</span>,</span>
+<span id="cb1-3"><a aria-label="3"></a>     <span class="at">main =</span> <span class="st">"bp_sys ~ age (NHANES adults)"</span>)</span>
+<span id="cb1-4"><a aria-label="4"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-workhorse-on-a-familiar-model-1" class="slide level2">
+<h2>The workhorse on a familiar model</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides-a_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Centered at zero across the range: no obvious curve</li>
+<li>Slightly more spread at high fitted values: keep that for deck B</li>
+</ul>
+</section>
+<section id="a-gallery-with-known-answers" class="slide level2">
+<h2>A gallery with known answers</h2>
+<p>Four simulated datasets, same straight-line model <code>lm(y ~ x)</code> fit to each. <strong>I know the truth because I wrote the code.</strong> Diagnose each panel.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="fu">set.seed</span>(<span class="dv">601</span>)</span>
+<span id="cb2-2"><a aria-label="2"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb2-3"><a aria-label="3"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb2-4"><a aria-label="4"></a>gallery <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb2-5"><a aria-label="5"></a>  <span class="fu">tibble</span>(<span class="at">panel =</span> <span class="st">"A"</span>, <span class="at">x =</span> x, <span class="at">y =</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">0.25</span> <span class="sc">*</span> x)),</span>
+<span id="cb2-6"><a aria-label="6"></a>  <span class="fu">tibble</span>(<span class="at">panel =</span> <span class="st">"B"</span>, <span class="at">x =</span> x, <span class="at">y =</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">1.2</span>)),</span>
+<span id="cb2-7"><a aria-label="7"></a>  <span class="fu">tibble</span>(<span class="at">panel =</span> <span class="st">"C"</span>, <span class="at">x =</span> x, <span class="at">y =</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n <span class="sc">-</span> <span class="dv">1</span>, <span class="at">sd =</span> <span class="fl">1.2</span>), <span class="dv">9</span>)),</span>
+<span id="cb2-8"><a aria-label="8"></a>  <span class="fu">tibble</span>(<span class="at">panel =</span> <span class="st">"D"</span>, <span class="at">x =</span> x,</span>
+<span id="cb2-9"><a aria-label="9"></a>         <span class="at">y =</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> x <span class="sc">-</span> <span class="fl">0.18</span> <span class="sc">*</span> (x <span class="sc">-</span> <span class="dv">5</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">1.2</span>))</span>
+<span id="cb2-10"><a aria-label="10"></a>)</span>
+<span id="cb2-11"><a aria-label="11"></a>gallery_resid <span class="ot">&lt;-</span> gallery <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a aria-label="12"></a>  <span class="fu">group_by</span>(panel) <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a aria-label="13"></a>  <span class="fu">mutate</span>(<span class="at">fitted =</span> <span class="fu">fitted</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x)), <span class="at">resid =</span> <span class="fu">resid</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a aria-label="14"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb2-15"><a aria-label="15"></a>gallery_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gallery_resid, <span class="fu">aes</span>(fitted, resid)) <span class="sc">+</span></span>
+<span id="cb2-16"><a aria-label="16"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a aria-label="17"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a aria-label="18"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>panel, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a aria-label="19"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fitted values"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="the-gallery" class="slide level2">
+<h2>The gallery</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides-a_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery-answered-a-and-b" class="slide level2">
+<h2>Gallery, answered: A and B</h2>
+<ul>
+<li><strong>A: fan.</strong> Errors were generated with <code>sd = 0.25 * x</code>: spread grows with the fitted value. Nonconstant variance</li>
+<li><strong>B: nothing.</strong> Honest constant-variance noise. This is what healthy looks like: hold onto it</li>
+</ul>
+</section>
+<section id="gallery-answered-c-and-d" class="slide level2">
+<h2>Gallery, answered: C and D</h2>
+<ul>
+<li><strong>C: one outlier.</strong> All errors normal except one observation pushed up by 9 (about 7 standard deviations). One point, far from the band</li>
+<li><strong>D: curve.</strong> The truth includes <span class="math inline">-0.18(x-5)^2</span>; the straight line misses systematically, so residuals arc: positive, negative, positive</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Real plots whisper; simulations shout. The lab drills you on the same four shapes so you recognize the whisper.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pattern-problem-consequence" class="slide level2">
+<h2>Pattern, problem, consequence</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 31%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>You see</th>
+<th>It suggests</th>
+<th>What it costs you</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Curve or arc</td>
+<td>Wrong mean function (nonlinearity)</td>
+<td>Biased estimates; wrong story</td>
+</tr>
+<tr class="even">
+<td>Fan or funnel</td>
+<td>Nonconstant variance</td>
+<td>Wrong SEs, CIs, p-values, PIs</td>
+</tr>
+<tr class="odd">
+<td>Isolated stray point</td>
+<td>Outlier or data error</td>
+<td>Can drag the whole fit (Week 7)</td>
+</tr>
+<tr class="even">
+<td>Boring blob</td>
+<td>Nothing detectable</td>
+<td>Carry on</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>“No visible problem” only rules out problems big enough to see</li>
+</ul>
+</section>
+<section id="residuals-vs-individual-predictors" class="slide level2">
+<h2>Residuals vs individual predictors</h2>
+<p><span class="math inline">\hat y</span> compresses all predictors onto one axis, which can <strong>hide</strong> which predictor is at fault. Plot residuals against each predictor too.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a><span class="fu">set.seed</span>(<span class="dv">602</span>)</span>
+<span id="cb3-2"><a aria-label="2"></a>m <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb3-3"><a aria-label="3"></a>x1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(m, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb3-4"><a aria-label="4"></a>x2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(m, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb3-5"><a aria-label="5"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> x1 <span class="sc">+</span> x2<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(m)</span>
+<span id="cb3-6"><a aria-label="6"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2)</span>
+<span id="cb3-7"><a aria-label="7"></a>sim2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(x1, x2, <span class="at">resid =</span> <span class="fu">resid</span>(fit2)) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a aria-label="8"></a>  <span class="fu">pivot_longer</span>(<span class="fu">c</span>(x1, x2), <span class="at">names_to =</span> <span class="st">"predictor"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb3-9"><a aria-label="9"></a>sim2_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sim2, <span class="fu">aes</span>(value, resid)) <span class="sc">+</span></span>
+<span id="cb3-10"><a aria-label="10"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a aria-label="11"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a aria-label="12"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>predictor, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a aria-label="13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Predictor value"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="residuals-vs-individual-predictors-1" class="slide level2">
+<h2>Residuals vs individual predictors</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides-a_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Truth: <span class="math inline">y = 1 + x_1 + x_2^2 + \varepsilon</span>. Fine vs <span class="math inline">x_1</span>; a parabola vs <span class="math inline">x_2</span></li>
+<li>Routine: residuals vs fitted first, then vs each predictor</li>
+</ul>
+</section>
+<section id="think-pair-share-2-min" class="slide level2 scrollable">
+<h2>Think-pair-share (2 min)</h2>
+<p>A classmate fits <code>uninsured ~ poverty</code> on county data and finds a clear fan: residual spread grows with fitted values.</p>
+<ol type="1">
+<li>Which assumption is in question?</li>
+<li>Is the estimated slope biased because of this?</li>
+<li>Which parts of last week’s output should they distrust?</li>
+</ol>
+<div class="fragment">
+<p>Fan means assumption 2, not assumption 1: the slope is still an unbiased estimate of the linear association, but its SE, the CIs, and especially the prediction intervals are built on a variance that is not one number.</p>
+</div>
+</section>
+<section id="lab-part-a" class="slide level2">
+<h2>Lab part A</h2>
+<p>Open <strong>Week 6 Lab</strong>, Part A:</p>
+<ul>
+<li>A seeded four-plot drill like today’s gallery: match each plot to its pathology and say what gave it away</li>
+<li>Then a real one: fit <code>uninsured ~ poverty</code> on <code>county_health</code>, make the diagnostic plots yourself, and write down what the residuals are telling you</li>
+</ul>
+<p>Deck B is about what to <strong>do</strong> with what you found.</p>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>GPH-GU 2353 · Week 6A</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1200,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
