@@ -1,0 +1,158 @@
+---
+title: "Lab 9: Comparing Groups Honestly"
+subtitle: "Week 9, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-09.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render, then upload both your `.qmd` and the rendered `.html` to Brightspace by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `nhanes_adults` exactly as in earlier
+labs).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(NHANES)
+theme_set(theme_minimal(base_size = 14))
+
+nhanes_adults <- NHANES |>
+  filter(SurveyYr == "2011_12", Age >= 20) |>
+  distinct(ID, .keep_all = TRUE) |>
+  select(
+    id = ID, age = Age, gender = Gender, race = Race1,
+    education = Education, income_mid = HHIncomeMid, poverty = Poverty,
+    height = Height, weight = Weight, bmi = BMI,
+    bp_sys = BPSysAve, bp_dia = BPDiaAve, pulse = Pulse,
+    tot_chol = TotChol, sleep_hrs = SleepHrsNight,
+    phys_active = PhysActive, smoker = Smoke100n,
+    alcohol_days = AlcoholYear, diabetes = Diabetes,
+    health_gen = HealthGen
+  )
+
+ed <- nhanes_adults |> drop_na(bp_sys, education, age)
+```
+
+# Part A: The education gradient (11:40-12:10)
+
+## A1. Know your factor
+
+Before modeling, inspect the factor.
+
+```{r}
+#| eval: false
+levels(ed$education)
+table(ed$___)
+```
+
+**Which level will `lm()` use as the reference, and how do you know?** ...
+
+## A2. Unadjusted gradient
+
+```{r}
+#| eval: false
+m_un <- lm(bp_sys ~ ___, data = ed)
+summary(m_un)$coefficients |> round(3)
+```
+
+**Complete: "College graduates average ___ mmHg ___ (higher/lower) systolic BP
+than the reference group, ___ (which group?), before any adjustment."** ...
+
+## A3. Add age
+
+```{r}
+#| eval: false
+m_adj <- lm(bp_sys ~ education + ___, data = ed)
+summary(m_adj)$coefficients |> round(3)
+```
+
+**What happened to the education dummies when age entered, and why? (Think
+Week 3: who is older in this sample?)** ...
+
+## A4. One factor, one test
+
+The four dummy t-tests do not answer "does education matter at all?" Run the
+joint F test:
+
+```{r}
+#| eval: false
+m_age_only <- lm(bp_sys ~ age, data = ed)
+anova(___, ___)
+```
+
+**Report the test in one sentence: F statistic, degrees of freedom, p-value,
+and the plain-language conclusion.** ...
+
+## A5. Relevel and verify nothing changed
+
+Make `College Grad` the reference and refit.
+
+```{r}
+#| eval: false
+ed2 <- ed |> mutate(education = fct_relevel(education, "___"))
+m_rel <- lm(bp_sys ~ education + age, data = ed2)
+round(coef(m_rel), 3)
+all.equal(fitted(m_adj), fitted(___))
+```
+
+**The printed coefficients changed but `all.equal()` says the fitted values
+are identical. Reconcile those two facts in one sentence.** ...
+
+# Part B: Does the slope differ by group? (12:50-13:25, in pairs)
+
+Your pair picks:
+
+- **a factor:** `gender`, `phys_active`, `diabetes`, or `health_gen`
+- **a continuous predictor:** for example `age`, `bmi`, `poverty`, or `sleep_hrs`
+- **an outcome:** for example `bp_sys`, `tot_chol`, `bmi`, or `pulse` (not one you used as a predictor)
+
+Claim your combination on the board so pairs spread out.
+
+## B1. Fit both models
+
+Fit the additive (main-effects) model and the interaction model.
+
+```{r}
+# your two models here
+```
+
+## B2. Plot the fitted lines
+
+One scatterplot of outcome vs continuous predictor, colored by your factor,
+with a fitted line per group.
+
+```{r}
+# your plot here
+```
+
+## B3. Does the interaction earn its keep?
+
+Use `anova()` on your two models AND your plot to decide. Keep the
+interaction only if both the test and the picture argue for it.
+
+```{r}
+# your anova here
+```
+
+**Your verdict and reasoning (2-3 sentences):** ...
+
+## B4. Strong-form report
+
+Write 2-3 sentences reporting your chosen model's key finding in strong form:
+which group's slope or level differs, by how much, in what units, with
+association (not causal) language, for what population. If you kept the
+interaction, state both slopes; if you dropped it, state the common slope and
+the group gap.
+
+**Your report:** ...
+
+## B5. Exit ticket
+
+Muddiest point from today: ...
+
+**Reminder:** the project EDA memo is also due tonight on Brightspace.

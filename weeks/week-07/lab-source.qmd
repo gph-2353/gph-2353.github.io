@@ -1,0 +1,220 @@
+---
+title: "Lab 7: The Pathology Hunt"
+subtitle: "Week 7, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-07.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render, then upload both your `.qmd` and the rendered `.html` to Brightspace by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `county_health` as in Labs 5-6 and
+loads the classic `savings` data). You will need the `faraway` package
+(`install.packages("faraway")` once, if needed).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(usdata)
+theme_set(theme_minimal(base_size = 14))
+
+data(county_complete)
+county_health <- county_complete |>
+  select(
+    state, name, fips, pop = pop_2019, uninsured = uninsured_2019,
+    poverty = poverty_2019, median_income = median_household_income_2019,
+    per_capita_income = per_capita_income_2019,
+    unemployment = unemployment_rate_2019, bachelors = bachelors_2019,
+    hs_grad = hs_grad_2019, median_age = median_age_2019,
+    broadband = household_has_broadband_2019, density = density_2010
+  ) |>
+  as_tibble()
+
+library(faraway)
+data(savings)
+```
+
+# Part A: Influence walkthrough on `savings` (11:40-12:10)
+
+The `savings` data: average savings rate (`sr`, % of disposable income) for 50
+countries, 1960-1970, with age structure (`pop15`, `pop75`), per-capita
+disposable income (`dpi`), and income growth (`ddpi`). Country names are the
+row names. This is the most famous influence example in the regression
+literature; by the end you will know why.
+
+## A1. Fit the model
+
+```{r}
+#| eval: false
+g <- lm(sr ~ pop15 + pop75 + dpi + ddpi, data = savings)
+summary(g)
+```
+
+**Which coefficients are statistically significant at the 5% level? Fill in:
+the `ddpi` coefficient is ____, meaning each additional point of income growth
+is associated with ____ points ____ (higher/lower) average savings rate,
+holding the other three variables fixed, among these 50 countries.** ...
+
+## A2. Leverage: who has unusual predictors?
+
+Leverage (hat value) $h_i$ measures how extreme country $i$'s predictor
+profile is. The average must be $p/n$; values above $2p/n$ deserve a look.
+
+```{r}
+#| eval: false
+h <- hatvalues(g)
+
+n <- ___          # number of countries
+p <- ___          # number of coefficients (count the intercept!)
+c(average_leverage = p / n, flag_threshold = 2 * p / n)
+
+sort(h, decreasing = TRUE)[1:5]
+halfnorm(h, labs = row.names(savings), ylab = "Leverage")
+```
+
+**Which two countries exceed the threshold? For the top one, look at its row
+(`savings["___", ]`) and compare to `summary(savings$ddpi)`: which predictor
+makes it extreme?** ...
+
+## A3. Outliers: who has a surprising savings rate?
+
+Studentized residuals re-estimate the error SD without each observation, so a
+big outlier cannot dilute its own evidence. With 50 countries we examine the
+biggest of 50 residuals, so we use the Bonferroni-corrected cutoff.
+
+```{r}
+#| eval: false
+rst <- rstudent(g)
+sort(abs(rst), decreasing = TRUE)[1:3]
+
+qt(1 - 0.05 / (2 * n), df = n - p - 1)   # Bonferroni critical value
+```
+
+**Which country has the largest studentized residual, and is it a formal
+outlier by the Bonferroni standard? One sentence.** ...
+
+## A4. Influence: who actually moves the fit?
+
+```{r}
+#| eval: false
+ck <- cooks.distance(g)
+sort(ck, decreasing = TRUE)[1:3]
+halfnorm(ck, 3, labs = row.names(savings), ylab = "Cook's distance")
+```
+
+**The top Cook's distance country: is it the same as the top-leverage country,
+the top-outlier country, both, or neither? Explain using D = (residual part)
+x (leverage part).** ...
+
+## A5. Refit without the top influential country
+
+```{r}
+#| eval: false
+g_drop <- lm(sr ~ pop15 + pop75 + dpi + ddpi, data = savings,
+             subset = row.names(savings) != "___")
+round(rbind(full = coef(g), dropped = coef(g_drop)), 4)
+```
+
+Fill in the comparison:
+
+- The coefficient that changes most in relative terms is ____, moving from
+  ____ to ____ (a change of roughly ____ %).
+- The sign of every coefficient (does / does not) stay the same.
+- One sentence you could write in a paper reporting this sensitivity check: ...
+
+## A6. Judgment call
+
+**Libya's data are correct: its oil economy really did have `ddpi` = 16.7.
+Should it be deleted from the analysis? What would you do instead? Two
+sentences.** ...
+
+# Part B: The pathology hunt (12:50-13:25, in pairs)
+
+Each of the four variants below draws a fresh sample of 50 counties and (in
+three of the four) plants exactly one anomaly in row 50. **One variant is
+completely clean.** You get one variant; you do not know in advance which kind
+you drew.
+
+Run this chunk as-is, then set your variant from your pair number.
+
+```{r}
+#| label: make-variant
+make_variant <- function(variant) {
+  stopifnot(variant %in% 0:3)
+  pool <- county_health |>
+    drop_na(uninsured, poverty) |>
+    filter(between(poverty, 5, 22), between(uninsured, 3, 22))
+  seeds <- c(69, 3, 7, 13)
+  set.seed(seeds[variant + 1])
+  d <- pool |> slice_sample(n = 50) |> select(state, name, uninsured, poverty)
+  if (variant == 1) { d$poverty[50] <- 45; d$uninsured[50] <- 19.75 }
+  if (variant == 2) { d$uninsured[50] <- d$uninsured[50] + 22 }
+  if (variant == 3) { d$poverty[50] <- 50; d$uninsured[50] <- 2 }
+  d
+}
+```
+
+```{r}
+#| eval: false
+pair_number <- ___          # from the board
+variant <- pair_number %% 4
+my_counties <- make_variant(variant)
+```
+
+(Yes, the planting code is visible above. The exercise is to *demonstrate with
+diagnostics* what was planted and what it does to the model, exactly as you
+would for an anomaly nobody planted on purpose.)
+
+## B1. Baseline model and scatterplot
+
+Fit `uninsured ~ poverty` on your 50 counties and plot the data with the
+fitted line. Anything suspicious to the naked eye?
+
+```{r}
+# your code here
+```
+
+**First impression:** ...
+
+## B2. Run the full battery
+
+Compute leverages, studentized residuals, and Cook's distances (Part A is your
+template; here n = 50 and p = 2). Report the flagged county (or report that
+nothing is flagged) with the numbers that flag it.
+
+```{r}
+# your code here
+```
+
+**Findings (which row, which statistics fire, which stay quiet):** ...
+
+## B3. Measure the damage
+
+Refit without your suspect county and compare slopes, p-values, and (if you
+have one) the changed conclusion. If your dataset is clean, show that dropping
+your largest-Cook's-distance county changes almost nothing.
+
+```{r}
+# your code here
+```
+
+**Before vs after:** ...
+
+## B4. Your 90-second show-and-tell
+
+Prepare (in this document) the three things you will say at the debrief:
+
+1. **Diagnosis** (leverage / outlier in y / influential point / clean), with
+   the one plot you would show: ...
+2. **Evidence** (the two or three numbers that make the case): ...
+3. **Treatment** (what you would do about it in a real analysis, given what
+   deck B said about investigating, reporting both fits, and never silently
+   deleting): ...
+
+## B5. Exit ticket
+
+Muddiest point from today: ...
