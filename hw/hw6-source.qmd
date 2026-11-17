@@ -1,0 +1,118 @@
+---
+title: "Homework 6"
+subtitle: "Regression I, Fall 2026. Assigned Nov 17, due Tuesday Dec 1, 11:59 PM on Brightspace"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="hw6-source.qmd" download="hw6.qmd">**Download this assignment as a .qmd
+file**</a> to use as your starting template.
+
+**Instructions.** This homework is deliberately light because your project
+presentations are around the corner: there is no new analysis to build. Instead, it is a
+capstone critique. An AI assistant was asked to analyze county uninsured
+rates and produced the short report below, including real R output. Your job
+is what a careful analyst's job increasingly is: verify the numbers, find
+what is wrong with the words, and rewrite the conclusions honestly. Upload both
+your `.qmd` source and the rendered `.html` to Brightspace, and end with your AI-use statement (see
+Section 4).
+
+**Data.** The county health dataset from the labs, built from the `usdata`
+package:
+
+```{r}
+library(tidyverse)
+library(usdata)
+data(county_complete)
+county_health <- county_complete |>
+  select(
+    state, name, fips, pop = pop_2019, uninsured = uninsured_2019,
+    poverty = poverty_2019, median_income = median_household_income_2019,
+    per_capita_income = per_capita_income_2019,
+    unemployment = unemployment_rate_2019, bachelors = bachelors_2019,
+    hs_grad = hs_grad_2019, median_age = median_age_2019,
+    broadband = household_has_broadband_2019, density = density_2010
+  ) |>
+  as_tibble()
+```
+
+`uninsured`, `poverty`, `unemployment`, and `bachelors` are percentages of
+the county population; `median_income` is in dollars; `median_age` in years.
+
+# The AI's report
+
+The AI was asked for "a publication-ready analysis of what drives county
+uninsured rates." It returned the following report, with the R output shown
+exactly as the model produces it:
+
+```{r}
+ai_model <- lm(uninsured ~ poverty + median_income + unemployment +
+                 bachelors + median_age, data = county_health)
+summary(ai_model)
+```
+
+> **Drivers of uninsurance in US counties: a regression analysis.**
+>
+> Using all 3,142 US counties, we regressed the county uninsured rate on
+> poverty, median household income, unemployment, education, and median age.
+> The model is highly significant overall (F = 90.3, p < 2e-16) and explains
+> 26% of the variation in uninsured rates. Because the overall F test is so
+> decisive, the model's assumptions are satisfied and no residual plots are
+> needed.
+>
+> Poverty is the key driver: its coefficient of 0.217 (p < 0.001) shows that
+> cutting a county's poverty rate by five percentage points would lower its
+> uninsured rate by about 1.1 points, a direct policy lever for coverage.
+> The 95% confidence interval for median income (-0.0000053, 0.0000568)
+> contains zero, which proves that income has no association with
+> uninsurance. We note that poverty and median income are strongly
+> correlated (r = -0.81); this collinearity biases both coefficients toward
+> zero, so the true poverty effect is even larger than reported. Education
+> matters at the individual level too: the bachelors coefficient of -0.148
+> means a person with a bachelor's degree is 0.148 percentage points less
+> likely to be uninsured than a person without one.
+>
+> The model also extends readily beyond the observed data: for a county with
+> a 60% poverty rate (median income 30,000 dollars, unemployment 10%,
+> bachelors 10%, median age 35), it predicts an uninsured rate of 20.9%.
+> These estimates give policymakers a reliable causal map of coverage.
+
+# Section 1: Verify (4 points)
+
+**1.1** Rebuild `county_health` with the code above and refit the AI's model
+yourself. Confirm which of the report's headline numbers match your output
+(the F statistic, R-squared, the poverty coefficient, the median income
+confidence interval from `confint()`, and the 60%-poverty prediction from
+`predict()`). (2 pts)
+
+**1.2** One of the report's numbers is flatly wrong. Find it, report the
+correct value, and explain *why* the correct value is what it is (hint:
+compare the degrees of freedom in the R output with the number of counties,
+and look at `colSums(is.na(county_health))`). (2 pts)
+
+# Section 2: Find the errors (8 points)
+
+The report contains at least six planted reasoning errors spanning the whole
+course, in addition to the wrong number from 1.2. Identify at least **five**:
+quote the offending phrase and explain in one or two sentences why it is
+wrong and what a correct statement would say. (1.5 pts per error, up to 7.5;
+the remaining 0.5 pts for correctly noting which single number was
+fabricated, which you may cite from your answer to 1.2.)
+
+# Section 3: Rewrite (8 points)
+
+Rewrite the report's conclusions as one honest abstract of **at most 150
+words**, in strong form: correct adjustment language, association not
+causation, the county (not individual) level of analysis, an honest statement
+about what the diagnostics you have not seen could change, and no claims
+outside the range of the data. You may include one or two numbers from the
+real output. Every sentence must be defensible from the output you verified
+in Section 1. (8 pts)
+
+# Section 4: AI-use statement (required, ungraded)
+
+One or two sentences: which AI tools you used on this assignment and for
+what, or "No AI tools used." Using an AI to help critique this AI report is
+permitted, but the errors you report and the abstract you write are yours to
+defend.

@@ -1,0 +1,172 @@
+---
+title: "Lab 8: Tangled Predictors and Bent Lines"
+subtitle: "Week 8, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-08.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render, then upload both your `.qmd` and the rendered `.html` to Brightspace by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `county_health` exactly as in Labs
+5-7, plus the `car` package for VIFs).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(usdata)
+theme_set(theme_minimal(base_size = 14))
+
+data(county_complete)
+county_health <- county_complete |>
+  select(
+    state, name, fips, pop = pop_2019, uninsured = uninsured_2019,
+    poverty = poverty_2019, median_income = median_household_income_2019,
+    per_capita_income = per_capita_income_2019,
+    unemployment = unemployment_rate_2019, bachelors = bachelors_2019,
+    hs_grad = hs_grad_2019, median_age = median_age_2019,
+    broadband = household_has_broadband_2019, density = density_2010
+  ) |>
+  as_tibble()
+
+library(car)
+soc <- county_health |>
+  drop_na(uninsured, poverty, median_income, per_capita_income, bachelors, hs_grad)
+```
+
+# Part A: Anatomy of a collinear block (11:40-12:10)
+
+## A1. How tangled are the socioeconomic predictors?
+
+Compute the correlation matrix of the five socioeconomic predictors.
+
+```{r}
+#| eval: false
+soc |>
+  select(poverty, median_income, per_capita_income, ___, ___) |>
+  cor() |>
+  round(2)
+```
+
+**Which pair is most strongly correlated, and does the sign make real-world
+sense?** ...
+
+## A2. VIFs for the full model
+
+Fit the full model and get the variance inflation factors.
+
+```{r}
+#| eval: false
+m_full <- lm(uninsured ~ poverty + median_income + per_capita_income +
+               bachelors + hs_grad, data = soc)
+vif(___)
+```
+
+**Which predictor has the largest VIF? Complete: "Its coefficient's standard
+error is about ___ times larger than it would be if the predictors were
+uncorrelated" (hint: square root).** ...
+
+## A3. Watch the bachelors coefficient swing
+
+Fit the sequence and collect the `bachelors` coefficient from each model.
+
+```{r}
+#| eval: false
+m1 <- lm(uninsured ~ bachelors, data = soc)
+m2 <- lm(uninsured ~ bachelors + hs_grad, data = soc)
+m3 <- lm(uninsured ~ bachelors + hs_grad + poverty, data = soc)
+m4 <- m_full
+
+tibble(
+  model = c("alone", "+ hs_grad", "+ poverty", "full"),
+  bachelors_coef = c(coef(m1)["bachelors"], coef(m2)["___"],
+                     coef(m3)["___"], coef(m4)["___"]),
+  bachelors_se = c(summary(m1)$coef["bachelors", 2],
+                   summary(m2)$coef["bachelors", 2],
+                   summary(m3)$coef["bachelors", 2],
+                   summary(m4)$coef["bachelors", 2])
+)
+```
+
+**Describe what happens to the coefficient (including its sign) and to its SE
+as correlated predictors enter.** ...
+
+## A4. What stayed stable?
+
+Collinearity destabilizes coefficients, not predictions. Check:
+
+```{r}
+#| eval: false
+c(r2_m2 = summary(m2)$r.squared,
+  r2_full = summary(m_full)$r.squared,
+  cor_predictions = cor(predict(___), predict(___)))
+```
+
+**Complete both sentences: "If my goal were predicting county uninsured rates,
+collinearity would ___." "If my goal were interpreting the bachelors
+coefficient, collinearity would ___."** ...
+
+## A5. Choose a repair
+
+Your team must report *interpretable* coefficients. Say which repair you would
+use for this block (drop, combine, or accept with caution) and defend it in
+two sentences.
+
+**Your answer:** ...
+
+# Part B: Fix a broken model (12:50-13:25, in pairs)
+
+Here is a model somebody actually proposed:
+
+```{r}
+broken <- lm(uninsured ~ density + pop, data = county_health)
+summary(broken)
+```
+
+Both predictors are wildly skewed (plot them and see), the $R^2$ is nearly
+zero, and the coefficients are unreadable ("per person" and "per person per
+square mile"). Your pair's job: rebuild it with transformations.
+
+## B1. Diagnose
+
+Show, with one or two plots, *why* the raw-scale model fails.
+
+```{r}
+# your plots here
+```
+
+**What do the plots show?** ...
+
+## B2. Rebuild
+
+Fit at least two candidate repairs (for example log-transforming one or both
+predictors, or the response). Watch out for the county with density 0; say
+what you did with it and why.
+
+```{r}
+# your models here
+```
+
+## B3. Choose and justify
+
+Pick your final model. Justify the choice in 2-3 sentences, balancing fit
+(compare $R^2$ or residual plots) against interpretability (could you explain
+each coefficient to a county health department?).
+
+**Your answer:** ...
+
+## B4. One strong-form interpretation
+
+Write the strong-form interpretation of one log-scale coefficient from your
+final model: adjustment set, the doubling or percent-change reading, units,
+association language, population.
+
+**Your sentence:** ...
+
+## B5. Exit ticket
+
+Muddiest point from today: ...

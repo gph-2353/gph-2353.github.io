@@ -1,0 +1,140 @@
+---
+title: "Lab 10: Selection, Then Your Own Project"
+subtitle: "Week 10, Regression I, Fall 2026"
+author: "YOUR NAME HERE"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="lab-source.qmd" download="lab-week-10.qmd">**Download this lab as a .qmd
+file**</a> and open it in RStudio; this web page is just a preview.
+
+Render, then upload both your `.qmd` and the rendered `.html` to Brightspace by 11:59 PM tonight. Completion-graded.
+
+Run this setup chunk first (it rebuilds `county_health` exactly as in Labs 5-9).
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(usdata)
+theme_set(theme_minimal(base_size = 14))
+
+data(county_complete)
+county_health <- county_complete |>
+  select(
+    state, name, fips, pop = pop_2019, uninsured = uninsured_2019,
+    poverty = poverty_2019, median_income = median_household_income_2019,
+    per_capita_income = per_capita_income_2019,
+    unemployment = unemployment_rate_2019, bachelors = bachelors_2019,
+    hs_grad = hs_grad_2019, median_age = median_age_2019,
+    broadband = household_has_broadband_2019, density = density_2010
+  ) |>
+  as_tibble()
+```
+
+# Part A: Two criteria, one dataset (11:40-12:10)
+
+## A1. Build the complete-case data and the full model
+
+`step()` compares models on the same rows, so drop rows with any missing
+candidate first. How many counties survive?
+
+```{r}
+#| eval: false
+ch <- county_health |>
+  drop_na(uninsured, poverty, median_income, per_capita_income,
+          unemployment, bachelors, hs_grad, median_age, broadband, density)
+
+full <- lm(uninsured ~ poverty + median_income + per_capita_income +
+             unemployment + bachelors + hs_grad + median_age +
+             broadband + density, data = ___)
+nrow(ch)
+```
+
+**How many of the 3,142 counties are we analyzing, and which single variable
+causes most of the loss?** (Hint: `colSums(is.na(county_health))`.) ...
+
+## A2. Backward AIC and backward BIC
+
+The only difference is the penalty `k`: 2 for AIC, `log(n)` for BIC.
+
+```{r}
+#| eval: false
+sel_aic <- step(full, direction = "backward", trace = 0)
+sel_bic <- step(full, direction = "backward", k = ___, trace = 0)
+
+formula(sel_aic)
+formula(sel_bic)
+```
+
+## A3. Compare the selected sets
+
+**Which predictors do the two criteria agree on? Which variable(s) do they
+disagree about, and why does the criterion with the larger penalty drop
+more?** (One or two sentences; mention what BIC's penalty is per parameter
+when n is about 1,266.) ...
+
+## A4. Refit the BIC model and report it strong-form
+
+Refit the BIC choice explicitly (write the formula out yourself; this is what
+you would publish, so own it), then write a strong-form sentence for the
+`hs_grad` coefficient: adjustment set, units, association wording,
+population.
+
+```{r}
+#| eval: false
+final <- lm(uninsured ~ ___, data = ch)
+summary(final)
+```
+
+**Strong-form sentence for `hs_grad`:** ...
+
+**One caution you would attach to this model's p-values, in one sentence
+(think: how was this model chosen?):** ...
+
+# Part B: Project workshop checklist (12:50-13:25, with your project partner)
+
+No new data in this part. Open your own project files and work through this
+checklist together; the filled checklist **is** the deliverable. Write real
+answers, not checkmarks: anywhere you cannot fill a line in, you have found
+this week's project work.
+
+## B1. The question
+
+**Our research question, in one sentence:** ...
+
+**Our outcome variable, its units, and confirmation it is continuous:** ...
+
+## B2. Data status
+
+**Dataset name, n, and unit of observation (person? county? country?):** ...
+
+**Top three data issues our EDA memo found (missingness, skew, odd values),
+and what we decided to do about each:** ...
+
+## B3. Candidate models
+
+**Our candidate predictors (with a phrase on why each belongs):** ...
+
+**The model we currently expect to be final (as an R formula):** ...
+
+**Any transformation we plan for the outcome or predictors, and why:** ...
+
+## B4. Diagnostics plan
+
+**The diagnostics we will run on the final model (name at least three from
+Weeks 6-8) and what we will do if each fails:** ...
+
+## B5. Selection story for the Methods section
+
+**If we compared models, the criterion we used and what we tried that did not
+survive; if we chose on subject-matter grounds, say so:** ...
+
+## B6. What we asked the instructor today (or would ask)
+
+...
+
+## B7. Exit ticket
+
+Muddiest point from today: ...

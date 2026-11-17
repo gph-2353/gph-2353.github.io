@@ -1,0 +1,113 @@
+---
+title: "Homework 5"
+subtitle: "Regression I, Fall 2026. Assigned Nov 10, due Tuesday Nov 24, 11:59 PM on Brightspace"
+execute:
+  warning: false
+  message: false
+---
+
+<a href="hw5-source.qmd" download="hw5.qmd">**Download this assignment as a .qmd
+file**</a> to use as your starting template.
+
+**Instructions.** Complete this assignment in Quarto or R Markdown and upload
+both your `.qmd` source and the rendered `.html` to Brightspace. Show your code. Interpretation questions are
+graded on precision (adjusted for what, units, association vs causation,
+population), exactly as practiced in the labs. End with your AI-use statement
+(see Section 4). This homework is a miniature of your project pipeline: EDA,
+model selection, diagnostics, and honest reporting on one dataset.
+
+**Data.** Body fat measurements for 252 adult men. The outcome is `brozek`,
+percent body fat from Brozek's equation, computed from an underwater body
+density measurement that is accurate but expensive; the goal is to predict it
+from cheap body measurements. The dataset also contains `siri`, `density`,
+and `free`, which are alternative versions of the outcome (Siri's equation,
+the raw density, and fat-free weight); using them as predictors would be
+cheating, so we drop them at the start.
+
+```{r}
+library(tidyverse)
+data(fat, package = "faraway")
+body <- fat |>
+  select(brozek, age, weight, height, neck, chest, abdom, hip, thigh)
+```
+
+Candidate predictors: `age` (years), `weight` (pounds), `height` (inches),
+and circumferences in cm of `neck`, `chest`, `abdom` (abdomen), `hip`, and
+`thigh`.
+
+# Section 1: Do (6 points)
+
+**1.1** EDA: numerical summaries of all nine variables and a histogram of
+`brozek`. Report anything implausible you find in the predictor summaries
+(look carefully at the minimum of `height`, and identify which row it belongs
+to). (2 pts)
+
+**1.2** Starting from the full model `brozek ~ .` on `body`, run backward
+selection twice with `step()`: once with the AIC penalty (the default,
+`k = 2`) and once with the BIC penalty (`k = log(n)`). Report the two
+selected predictor sets and each model's R-squared. (2 pts)
+
+**1.3** For the AIC-selected model: make the residuals-versus-fitted plot and
+the Q-Q plot of residuals, then compute Cook's distances and leverages
+(`hatvalues`). Report the case numbers with the largest Cook's distance and
+(for the full eight-predictor model) the largest leverage, together with
+those men's `weight` and `height`. (2 pts)
+
+# Section 2: Interpret (8 points; interpretation precision counts double)
+
+**2.1** AIC kept five predictors; BIC kept two. Which model would you carry
+forward for the stated goal of cheap prediction of body fat, and why? Your
+defense should mention what the two criteria reward differently and compare
+the models' R-squared values. (2 pts)
+
+**2.2** A classmate reports the p-values from the summary of the selected
+model as if they were ordinary p-values. Explain in two or three sentences
+why p-values computed on the same data that chose the model are optimistic
+(too small), and what this means for how you should describe the selected
+model's "significant" predictors. (2 pts)
+
+**2.3** Consider the two cases you flagged in 1.3: the highest-leverage case
+(the 29.5-inch height) and the highest-Cook's-distance case (the heaviest
+man). For the height case, compute the BMI its recorded weight and height
+imply. What should you do with each case, and on what grounds? Note that high
+leverage with small Cook's distance and high influence call for different
+reasoning. (2 pts)
+
+**2.4** Write the strong-form interpretation of the `abdom` coefficient in
+the BIC-selected model. Then explain in one sentence why the `weight`
+coefficient in that model is negative even though heavier men have more body
+fat overall (marginal correlation between `weight` and `brozek` is strongly
+positive). (2 pts)
+
+# Section 3: Critique the AI (6 points)
+
+A student gave this dataset to an AI assistant and asked it to select and
+report a model. The assistant replied:
+
+> "Starting from the eight candidates (R-squared 0.79), backward stepwise AIC
+> identified the true model: `brozek ~ weight + neck + abdom + hip + thigh`.
+> BIC selected only `weight` and `abdom`, but the AIC model is better because
+> its R-squared is higher (0.731 versus 0.719), and R-squared is the fairest
+> way to compare models with different numbers of predictors. The abdom
+> coefficient of 0.95 shows that abdominal circumference causes body fat:
+> each extra cm of abdomen adds 0.95 percentage points of fat, so a man who
+> reduces his waist by 10 cm will lower his body fat by 9.5 points. One
+> record lists a height of 29.5 inches, which is probably a mistake, but I
+> kept it in the analysis because more data always improves a regression."
+
+**3.1** This paragraph contains at least four distinct statistical errors.
+Identify each one you find (quote the offending phrase), and explain in one
+or two sentences why it is wrong. Finding four earns full credit; a fifth
+earns a bonus point. (4 pts + 1 bonus)
+
+**3.2** Verify the AI's numbers: report the full model's actual R-squared and
+confirm (or refute) the two selected predictor sets and their R-squared
+values by running the selections yourself (you did this in 1.2). State which
+of the AI's numbers is wrong. (2 pts)
+
+# Section 4: AI-use statement (required, ungraded)
+
+One or two sentences: which AI tools you used on this assignment and for what,
+or "No AI tools used." Note that Section 3 asks you to critique provided AI
+output; using an AI to critique the AI is permitted, but the errors you report
+are yours to defend.
